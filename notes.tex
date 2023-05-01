@@ -81,6 +81,27 @@ die to roll a six?\\\\
       \]
       \end{itemize}
     \end{itemize}
+  \item \textbf{HyperGeometric}
+    \begin{itemize}
+    \item $X \sim \text{Hypergeom}(N, N_A, n)$
+    \item Probability, $P(X = k)$, of sampling $k$ items of type $A$ ($N_A$)
+      without replacement from a total of $N$.  $N = N_A + N_B$, $n$ is the total number 
+      in the sample.
+    \item $P(X = k) = \frac{ \binom{N_A}{k} \binom{N - N_A}{n -k} }{ \binom{N}{n} }$ for $k = 0,1, \dots,n$
+    \item Examples
+      \begin{itemize}
+        \item A basket contains a litter of 6 kittens, 2 males and 4 females.
+          A neighbor comes and picks 3 kittens randomly to take home with him. Let
+          X be the number of male kittens in the group the neighbor chose.
+          Then $X \sim$ Hypergeom(6,2,3), with p.m.f.\\
+         $P(X = 0) = \frac{ \binom{2}{0} \binom{6 - 2}{3 - 0} }{ \binom{6}{3} } = \frac{1}{5}
+         \qquad
+          P(X = 1) = \frac{ \binom{2}{1} \binom{6 - 2}{3 - 1} }{ \binom{6}{3} } = \frac{3}{5}$\\
+         $P(X = 2) = \frac{ \binom{2}{2} \binom{6 - 2}{3 - 2} }{ \binom{6}{3} } = \frac{1}{5}
+         \qquad
+          P(X = 3) = \frac{ \binom{3}{3} \binom{6 - 3}{3 - 3} }{ \binom{6}{3} } = 0$
+      \end{itemize}
+    \end{itemize}
   \end{itemize}
 
 
@@ -94,12 +115,15 @@ die to roll a six?\\\\
         \item Suppose after testing positive, a person is retested for the disease
 and this test also comes back positive. What is the probability of disease after two
 positive tests?
-          \[
-            \begin{aligned}
-            P\left(D \mid A_1 A_2\right) & =\frac{P\left(D A_1 A_2\right)}{P\left(A_1 A_2\right)}=\frac{P\left(A_1 A_2 \mid D\right) P(D)}{P\left(A_1 A_2 \mid D\right) P(D)+P\left(A_1 A_2 \mid D^c\right) P\left(D^c\right)} \\
-            & =\frac{P\left(A_1 \mid D\right) P\left(A_2 \mid D\right) P(D)}{P\left(A_1 \mid D\right) P\left(A_2 \mid D\right) P(D)+P\left(A_1 \mid D^c\right) P\left(A_2 \mid D^c\right) P\left(D^c\right)}
-            \end{aligned}
-          \]
+        \[ \begin{aligned}
+            P\left(D \mid A_1 A_2\right)
+            & =\frac{P\left(D A_1 A_2\right)}{P\left(A_1 A_2\right)}
+              =\frac{P\left(A_1 A_2 \mid D\right) P(D)}{P\left(A_1 A_2 \mid D\right)
+                P(D)+P\left(A_1 A_2 \mid D^c\right) P\left(D^c\right)} \\
+            & =\frac{P\left(A_1 \mid D\right) P\left(A_2 \mid D\right)
+                P(D)}{P\left(A_1 \mid D\right) P\left(A_2 \mid D\right)
+                P(D)+P\left(A_1 \mid D^c\right) P\left(A_2 \mid D^c\right) P\left(D^c\right)}
+           \end{aligned} \]
         \item 
       \end{itemize}
   \end{itemize}
