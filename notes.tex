@@ -127,4 +127,32 @@ positive tests?
         \item 
       \end{itemize}
   \end{itemize}
+
+
+\chapter{Random Variables}
+  \section{Probability Distributions}
+    \begin{itemize}
+      \item Probability Mass Function
+        \begin{itemize}
+          \item A function from the set of possible discrete values of X into [0, 1].
+          \item $ \sum^{}_{k} p_X(k) = \sum^{}_{k}  P(X=k) = 1 $
+          \item $ P(X \in B) =  \sum^{}_{k \in B} p_X(k) $
+        \end{itemize}
+      \item Probability Density Function
+        \begin{itemize}
+          \item A function from an interval of possible real values of X into [0, 1].
+          \item $ P(X \leq b) =  \int^{b}_{-\infty} f(x) dx $
+          \item Distributions
+              \begin{itemize}
+                \item Uniform
+                    \begin{itemize}
+                      \item $X \sim$ Unif$[a,b]$
+                      \item $f(x) = \frac{1}{b-a} $ for $x \in [a,b]$
+                      \item If $X \sim$ Unif$[a,b]$ and $[c,d] \subset [a,b]$, then
+                        $ P(c \leq X \leq d) = \int_{{c}}^{{d}} {\frac{1}{b-a}} \: d{x} {} $
+                    \end{itemize}
+              \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
 \end{document}
