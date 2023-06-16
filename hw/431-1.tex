@@ -1,0 +1,288 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+%\usepackage{enumitem}
+\usepackage[inline]{enumitem}
+
+%\input{.tex/preamble}
+%\input{.tex/macros}
+%\input{.tex/letterfonts}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Homework 1}
+
+\author{Guy Matz}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+
+\item[1.4] Every day a kindergarten class chooses randomly one of the 50 state flags to hang on the wall, without regard to previous choices. We are interested in the flags that are chosen on Monday, Tuesday and Wednesday of next week.
+
+  \begin{enumerate}
+    \item \textit{Describe a sample space $\Omega$ and a probability
+        measure $P$ to model this experiment.}
+
+      A sample space , $\Omega$, is "the set of all possible
+      outcomes" which, in this case, is the set of ordered triples
+      consisting of 3 flags, one for each day. I.e.,
+        \[ \Omega = \{\{AL, AL, AL\}, \{AL, AL, AK\}, ... \} \]
+      or, where $F_i$ is the set of State flags,
+      \[ \Omega = \{ ( f_1, f_2, f_3): f_i \in F \}  \]
+
+      A Probability Measure is a function from $\mathcal{F}$ to the
+      reals.  An event $A$ is choosing a flag on each of the 3 days,
+      so $P(A)$ equals the probability of picking 1 out of 50 flags 3
+      times.
+
+        \[ P(A) = \left( \frac{1}{50} \right)^3 \]
+        or
+        \[ P(\{f_1, f_2, f_3\}) = \left( \frac{1}{50} \right)^3 \]
+
+    \item \textit{What is the probability that the class hangs Wisconsin's flag
+          on Monday, Michigan's flag on Tuesday, and California's flag on
+        Wednesday?}
+
+      Let $A$ be the event described above.  Then
+        \[ P(A) = \left( \frac{1}{50} \right)^3 \]
+        or
+        \[ P(\{f_1=\text{WI}, f_2= \text{MI}, f_3 = \text{CA}\}) = \left( \frac{1}{50} \right)^3 \]
+
+    \item  \textit{What is the probability that Wisconsin's flag will be hung at
+          least two of the three days?}
+
+      This is equal to the event in which Wisconsin's flag is hung twice
+      --- $P(A_2)$ ---  plus the event in which Wisconsin's flag is hung
+      three times, $P(A_3)$.
+
+      \begin{itemize}
+        \item $P(A_2)$ is equal to the the number flag positions --- 
+          $\binom{3}{2} = 3$ --- times 
+      the number of flags for the remaining slot - 49 - divided by $\Omega$
+        \item $P(A_3)$ is equal to the the number flag positions --- 
+          $\binom{3}{3} = 1$ --- 
+      divided by $\Omega$
+      \end{itemize}
+      \[
+        P(A)=P(A_2)+P(A_3)=\binom{3}{2} \cdot \frac{49}{50}  \left( \frac{1}{50} \right)^2 +
+                            \binom{3}{3} \left( \frac{1}{50} \right)^3
+      \]
+  \end{enumerate}
+
+\item[1.5] In one type of state lottery 5 distinct numbers are picked from
+  $$1,2,3, \ldots, 40$$
+  uniformly at random.
+
+(a) Describe a sample space $\Omega$ and a probability measure $P$ to model
+this experiment.
+
+\[ \Omega = \{ \{X_1,X_2,X_3,X_4,X_5\}: X_n \in \{1, \ldots, 40\}, X_i \neq X_j, i \neq j \} \]
+
+\[ P(A) = \frac{1}{(40)_{36}} \]
+
+(b) What is the probability that out of the five picked numbers exactly
+three will be even?
+
+  So this is equal to the number of "slots" chosen to be even --- 3
+  out of 5 --- multiplied by the number of options for each even,
+  multiplied by the choices for odds, divided by $\#\Omega$
+
+  \[\frac{\binom{5}{3} \cdot 20 \cdot 19 \cdot 18 \cdot
+    \binom{2}{2} \cdot 20 \cdot 19}
+        {(40)_{36}} = 0.329
+      \]
+
+\newpage
+\item[1.8] Suppose that a bag of scrabble tiles contains 5 Es, 4 As, 3 Ns and 2
+  Bs. It is my turn and I draw 4 tiles from the bag without replacement. Assume
+  that my draw is uniformly random. Let $C$ be the event that I got two Es,
+  one A and one N.
+
+  \[ \Omega = \{ (T_1, T_2, T_3, T_4):T_i \in \{1..14\}, T_i \neq T_j \} \]
+
+(a) Compute $P(C)$ by imagining that the tiles are drawn one by one as an
+  ordered sample.
+
+  \[ \#\Omega = 14 \cdot 13 \cdot 12 \cdot 11  = 24024\]
+  \[ A = \{ (t_1, t_2, t_3, t_4): \text{two} \in \{1..5\}, \\
+      \text{one} \in \{6..9\}, \\
+      \text{one} \in \{10..12\}
+        \}
+  \]
+  \[ \#A = \text{\# positions for E} \cdot \text{\# positions for A} \cdot
+      \text{\# of Es} \cdot \text{\# of Es left} \cdot \text{\# of As} \cdot
+      \text{\# of Ns}
+    \]
+    \[ \#A = \binom{4}{2} \cdot \binom{2}{1} \cdot 1 \cdot
+    5 \cdot 4 \cdot 4 \cdot 3 \]
+    \[ \#A = 10 \cdot 2 \cdot 1 \cdot 5 \cdot 4 \cdot 4 \cdot 3  = 4800\]
+
+\[ \frac{\#A}{\#\Omega}  = \frac{10 \cdot 2 \cdot 5 \cdot 4}{14 \cdot 13 \cdot 11} 
+                = \frac{400}{2002} \approx .2 \]
+
+(b) Compute $P(C)$ by imagining that the tiles are drawn all at once as an
+unordered sample.
+
+  \[ \#\Omega = \binom{14}{4} = 1001 \]
+  \[ A = \{ (t_1, t_2, t_3, t_4): \text{two} \in \{1..5\}, \\
+      \text{one} \in \{6..9\}, \\
+      \text{one} \in \{10..12\}
+        \} \]
+    \[ \#A = \binom{5}{2} \cdot \binom{4}{1} \cdot \binom{3}{1} = 120 \]
+\[ \frac{\#A}{\#\Omega}  = \frac{120}{1001} \approx .2 \]
+
+\newpage
+\item[1.10] We roll a fair die repeatedly until we see the number four appear and then we stop. The outcome of the experiment is the number of rolls.
+
+(a) Following Example 1.16 describe a sample space $\Omega$ and a
+probability measure $P$ to model this situation.
+\[ \Omega = \{1,2,3, \ldots \} \]
+\[ P(k) = \left( \frac{5}{6} \right)^{k-1} \left( \frac{1}{6} \right) \]
+Where $k$ is the number of rolls to get a 4.
+
+(b) Calculate the probability that the number four never appears.
+\[ = 1 - P\{\Omega\} = 1 - P\{1,2,3, \ldots\} = 1 - \sum^{\infty}_{k=1} P\{k\} = 1 - 1 = 0  \]
+
+\newpage
+\item[1.12] We roll a fair die repeatedly until we see the number four appear and then we stop.
+
+(a) What is the probability that we need at most 3 rolls?
+
+This is the same as the probability of 1 roll, plus 2 rolls, plus 3 rolls
+\[ \frac{1}{6} + \frac{5}{6} \cdot \frac{1}{6}
+  + \left( \frac{5}{6} \right)^2 \frac{1}{6}  = 0.42 \]
+
+(b) What is the probability that we needed an even number of die rolls?
+
+Originally I thought this should be 1/2, but now I think it's more
+likely to roll a four on an odd roll, since an odd roll comes first.
+
+For an even roll we have 
+\begin{align*}
+  P(A) & =\sum^{\infty}_{i=0} \left( \frac{1}{6} \right) 
+                \left( \frac{5}{6} \right)^{2i+1} \\
+      & = \frac{1}{6} \sum^{\infty}_{i=0} \left( \frac{5}{6} \right)^{2i+1} \\
+      & = \frac{5}{36} \sum^{\infty}_{i=0} \left( \frac{5}{6} \right)^{2i} \\
+       & =\frac{5}{36} \frac{1}{1 - \left( \frac{5}{6} \right)^2} \\
+       & =\frac{5}{36} \frac{1}{1 - \left( \frac{25}{36} \right)} \\
+       & =\frac{5}{36} \frac{1}{\left( \frac{11}{36} \right)} \\
+       & =\frac{5}{36} \left( \frac{36}{11} \right) \\
+       & =\frac{5}{11}
+\end{align*}
+
+\newpage
+\item[1.16] We flip a fair coin five times. For every heads you pay me \$1
+  and for every tails I pay you \$1. Let $X$ denote my net winnings at the
+  end of five flips. Find the possible values and the probability mass
+  function of $X$.
+    \[P(X = -5) = \frac{1}{32}\]
+    \[P(X = -3) =  \frac{5}{32}\]
+    \[P(X = -1) =  \frac{10}{32}\]
+    \[P(X = 1) =  \frac{10}{32}\]
+    \[P(X = 3) =  \frac{5}{32}\]
+    \[P(X = 5) =  \frac{1}{32}\]
+
+
+
+\newpage
+\item[1.28] We have an urn with $m$ green balls and $n$ yellow balls. Two
+  balls are drawn at random. What is the probability that the two balls
+  have the same color?
+
+  \begin{enumerate}
+    \item Assume that the balls are sampled without replacement.
+
+      This is the probability of picking either 2 green balls xor
+      2 yellow balls
+
+      \[ P(A) = \frac{m}{m+n} \cdot \frac{m-1}{m+n-1} + \frac{n}{m+n} \cdot \frac{n-1}{m+n-1}  \]
+    \item Assume that the balls are sampled with replacement.
+      \[ P(A) = \frac{m}{m+n} \cdot \frac{m}{m+n} + \frac{n}{m+n} \cdot \frac{n}{m+n}  \]
+  \end{enumerate}
+
+\newpage
+
+\item[1.36] \textit{Let $(X, Y)$ denote a uniformly chosen random
+  point inside the unit square}
+
+\[ [0,1]^{2}=[0,1] \times[0,1]=\{(x, y): 0 \leq x, y \leq 1\} \]
+
+  \begin{enumerate}
+    \item \textit{Let $0 \leq a < b \leq 1$. Find the probability $P(a<X<b)$,}
+      that is, the probability that the $x$-coordinate $X$ of the chosen
+      point lies in the interval $(a, b)$.
+
+      This feels like it should simply be the ratio of the interval.  So
+      \[ P(a < X < b) = b - a \]
+
+    \item \textit{What is the probability $P(|X-Y| \leq 1 / 4)$?}
+
+      The figure above?/below? shows the boundaries for the inequality
+      $|X-Y| \leq \frac{1}{4} $
+
+      $P(|X-Y| \leq 1 / 4)$ equals the ratio of the area between
+      the lines, which is the entire square, minus the triangles at
+      top-left and bottom-right, or $1 - \frac{9}{16}  = \frac{7}{16} $
+
+      \begin{figure}
+        \centering
+        \begin{tikzpicture}
+          \draw[step=1cm,gray,very thin] (0,0) grid (4,4);
+          \draw (0,1) -- (3,4);
+          \draw (1,0) -- (4,3);
+        \end{tikzpicture}
+        \caption{$|X-Y| \leq 1 / 4$}
+      \end{figure}
+  \end{enumerate}
+
+\newpage
+\item[2.4] \textit{We have two urns. The first urn contains two balls
+    labeled 1 and 2. The second urn contains three balls labeled 3, 4
+    and 5.  We choose one of the urns at random (with equal probability)
+    and then sample one ball (uniformly at random) from the chosen urn.
+    What is the probability that we picked the ball labeled 5?}
+
+    Let $X$ be a RV for picking a ball, and $U$ for picking an urn.
+    \begin{align*}
+      P(X=5) &= P(X = 5 | U = 1) \cdot P(U=1) + P(X=5 | U =2) \cdot P(U=2) \\
+              &= \frac{0}{2} \cdot \frac{1}{2} + \frac{1}{3}  \cdot \frac{1}{2} \\
+              &= \frac{1}{6}
+    \end{align*}
+
+\newpage
+\item[2.7]
+  \begin{enumerate}
+    \item  \emph{Use the definition of conditional probability and
+      additivity of probability to show that $P(A^c |B) = 1 - P(A|B)$}
+
+      By the Additivity of Probability we know that
+      \[ P(A) + P(A^c) = 1 \]
+      And by Conditional Probability we know that
+      \[ P(A|B) = \frac{P(A \cap B)}{P(B)} \text{ and } P(A|B) \cdot P(B) = P(A \cap B) \]
+      Combining the two we see
+      \[ P(A|B)P(B) + P(A^c|B)P(B) = P(A \cap B) + P(A^c \cap B) = B \]
+        And
+      \[ P(A|B) + P(A^c|B) = 1 \]
+      So
+      \[ P(A^c|B) = 1 - P(A|B) \]
+
+    \item \emph{Suppose $P(A|B) = 0.6$ and $P(B) = 0.5$. Find $P(A^cB)$.}
+
+    By the definition of conditional probabiity we have
+    \[ P(AB) = P(A|B)P(B) = 0.6 \cdot 0.5  = .3 \]
+    Then, since $ P(B) = P(A^cB) + P(AB)$, we have
+    \[ P(A^cB) = P(B) - P(AB) =  0.5 - 0.3 = 0.2 \]
+  \end{enumerate}
+
+\end{itemize}
+\end{document}

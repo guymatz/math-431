@@ -1,0 +1,136 @@
+\documentclass{report}
+
+\input{.tex/preamble}
+\input{.tex/macros}
+\input{.tex/letterfonts}
+
+\title{
+  \Huge{Math 431 - Introduction to Probability Theory}
+  \\
+  Notes
+}
+\author{\huge{Guy Matz}}
+\date{}
+
+\begin{document}
+%\maketitle
+
+% \setcounter{chapter}{1}
+\chapter*{20230619 - Introduction}
+
+\begin{itemize}
+  \item Reiew of set nontation and DeMorgan's rule (Appendix B, C)
+
+    \begin{itemize}
+
+    \item $\Omega$ is a set and contains some elements.  if $\Omega$
+      contains $\omega$ we write $\omega \in \Omega$
+
+    \item A is a subset of B: $A \subset B$
+
+    Union, interection, complement . . .\\
+    Assume A and B are subsets of $\Omega$
+    $$A \cup B = \{ \omega \in \Omega: \omega \in A OR \omega \in B\}$$
+    $$A \cap B = \{ \omega \in \Omega: \omega \in A AND \omega \in B\}$$
+    $$A^c = \{ \omega \in \Omega: \omega \notin A \}$$
+    $$A \setminus B=\{\omega \in \Omega:\omega \in A AND \omega \notin B\}$$
+    \[ A \setminus B = A \cap B^c \]
+
+    DeMorgan's Law: $\left( \cap A_i \right)^c = \cup^{\infty}_{i=1} A_i^c$
+
+    \end{itemize}
+
+  \item Definitions
+    \dfn{ Probability }{
+      Mathematical models of experiments (See video @ min 32)
+    }
+
+    \dfn{ Sample space  }{
+      $\Omega$: set of possible outcomes
+    }
+
+    \dfn{ Sample Points }{
+      $\omega$: Elements of $\Omega$ are \underline{Sample points}
+    }
+
+    \dfn{ Event Space }{
+      $\mathcal{F}$: Subsets of $\Omega$
+    }
+
+    \dfn{ Probability Measure }{
+    $P$: Probability Measure == Probability Distribution == Probability
+    }
+
+    \dfn{ Probability Space }{
+      $(\Omega, \mathcal{F}, P)$
+    }
+  \end{itemize}
+
+\chapter*{20230620 - Random Sampling}
+\begin{itemize}
+  \item Order - objects chosen one ata time
+  \item unOrder - objects chosen in a group
+  \item With Replacement - 
+  \item WithOUT Replacement - 
+  \item ORDERed with replacement
+    \[ P(\omega) = \left( \frac{1}{\#\Omega} \right) = \left( \frac{1}{n} \right)^k \]
+  \item ORDERed withOUT replacement (falling factorial)
+  \[ P(\omega) = \frac{1}{(n)_k} = \frac{k!}{n!} \]
+  \[ \#\Omega = (n)_k \]
+  \[ \#A = \text{\# of slots for each  option} \cdot \text{\# of each option} \]
+  \item UNordered withOUT replacement - "chosen all at once"
+    \[ \#\Omega = \binom{n}{k} = \frac{n!}{(n-k)!k!}  \]
+    \[ \#A = \prod_{j=0}^{m} \binom{n_j}{k_j} \]
+
+\end{itemize}
+
+\chapter*{20230622}%
+\section*{Random Varaibles}%
+
+  \dfn{ Random Variable }{
+    A function from $\Omega$ into the real numbers
+  }
+  \dfn{ Probability Distribution }{
+    The Collection of probabilites $P\{X \in B \}$ for sets $B \subset R$ 
+
+    An assignment of probabilities to subsets of $R$ that satisfies
+    the axioms of probability
+  }
+  \dfn{ Discrete RV }{
+    an RV is discrete if there exists a finite or countably infinite
+    set $\{k_1, k_2,,,\}$ such that the sum ranges 
+
+    bodyRead up on this
+  }
+  \dfn{ Probability Mass Function - p.m.f }{
+    \[ p(k) = P(X=k) \]
+    Describes a discrete RV.  The function $p_X$ gives the probability
+    of each possible value of X.
+  }
+
+  \dfn{ Conditional Prob }{
+    Let BB be an event in the sample space such that $P(B) > 0$.
+    THen for all events A, the conditional prob of "A given B" is
+    deffined by 
+    \[ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(A B)}{P(B)}  \]
+  }
+
+  \dfn{ Partition }{
+    A finite collection off events $\{B_1..B_n\}$ is a \underline{partition}
+    off $\Omega $ if the sets $B_i$ are pairwise disjoint and together
+    they make up $\Omega$.  That is, $B_iB_j = \emptyset$ when $i \neq
+    j$ and $\cup^n_{i=1}B_i = \Omega$
+  }
+
+  
+
+
+
+\chapter*{20230627}%
+  \begin{itemize}
+    \item Independence
+      \begin{enumerate}
+        \item get 3 different version
+      \end{enumerate}
+  \end{itemize}
+\end{document}
