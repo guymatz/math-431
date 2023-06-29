@@ -1,0 +1,185 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+%\usepackage{enumitem}
+\usepackage[inline]{enumitem}
+
+%\input{.tex/preamble}
+%\input{.tex/macros}
+%\input{.tex/letterfonts}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Homework 1}
+
+\author{Guy Matz}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+
+  \item[2.10] I have a bag with 3 fair dice. One is 4-sided, one is 6-sided, and one is 12-sided. I reach into the bag, pick one die at random and roll it. The outcome of the roll is 4 . What is the probability that I pulled out the 6-sided die?
+
+\newpage
+  \item[2.18] We choose a number from the set $\{10,11,12, \ldots, 99\}$
+    uniformly at random.
+    \begin{enumerate}
+      \item Let $X$ be the first digit and $Y$ the second digit of the chosen number. Show that $X$ and $Y$ are independent random variables.
+
+      \item Let $X$ be the first digit of the chosen number and $Z$ the sum of the two digits. Show that $X$ and $Z$ are not independent.
+    \end{enumerate}
+
+\newpage
+  \item[2.34] You play the following game against your friend. You have two urns and three balls. One of the balls is marked. You get to place the balls in the two urns any way you please, including leaving one urn empty. Your friend will choose one urn at random and then draw a ball from that urn. (If he chose an empty urn, there is no ball.) His goal is to draw the marked ball.
+
+    \begin{enumerate}
+      \item How would you arrange the balls in the urns to minimize his chances of drawing the marked ball?
+
+        I would put all of the balls into one urn.  Then the chance of
+        finding the ball would be
+        \[ \frac{1}{2} \cdot 0 + \\frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}  \]
+
+      \item How would your friend arrange the balls in the urns to maximize his chances of drawing the marked ball?
+
+        He should put the balls into its own urn.  Then the chance of
+        finding the ball would be
+        \[ \frac{1}{2} \cdot 0 + \\frac{1}{2} \cdot 1 = \frac{1}{2}  \]
+
+      \item Repeat (a) and (b) for the case of $n$ balls with one marked ball.
+        \begin{enumerate}
+          \item How would you arrange the balls in the urns to minimize
+            his chances of drawing the marked ball?
+
+            I would put all of the balls into one urn.  Then the chance of
+            finding the ball would be
+            \[ \frac{1}{2} \cdot 0 + \\frac{1}{2} \cdot \frac{1}{n} = \frac{1}{2n}  \]
+
+          \item How would your friend arrange the balls in the urns to
+            maximize his chances of drawing the marked ball?
+
+            He should put the balls into its own urn.  Then the chance of
+            finding the ball would be
+            \[ \frac{1}{2} \cdot 0 + \frac{1}{2} \cdot 1 = \frac{1}{2}  \]
+        \end{enumerate}
+
+    \end{enumerate}
+
+
+\newpage
+  \item[2.54] Let $A$ and $B$ be events with these properties: $0<P(B)<1$
+    and $P(A \mid B)=P\left(A \mid B^{c}\right)=\frac{1}{3}$.
+    \begin{enumerate}
+      \item Is it possible to calculate $P(A)$ from this information?
+        Either declare that it is not possible, or find the value of
+        $P(A)$.
+
+      \item Are $A$ and $B$ independent, not independent, or is it
+        impossible to determine?
+
+    \end{enumerate}
+
+\newpage
+  \item[2.61] Suppose an urn has 3 green balls and 4 red balls.
+    \begin{enumerate}
+      \item Nine draws are made with replacement. Let $X$ be the number
+        of times a green ball appeared. Identify by name the probability
+        distribution of $X$. Find the probabilities $P(X \geq 1)$ and
+        $P(X \leq 5)$.
+
+      \item Draws with replacement are made until the first green ball
+        appears. Let $N$ be the number of draws that were needed.
+        Identify by name the probability distribution of $N$. Find the
+        probability $P(N \leq 9)$.
+
+      \item Compare $P(X \geq 1)$ and $P(N \leq 9)$. Is there a reason
+        these should be the same?
+    \end{enumerate}
+
+\newpage
+  \item[2.70] Flip a coin three times. Assume the probability of tails is
+    $p$ and that successive flips are independent. Let $A$ be the event
+    that we have exactly one tails among the first two coin flips and $B$
+    the event that we have exactly one tails among the last two coin
+    flips. For which values of $p$ are events $A$ and $B$ independent?
+    (This generalizes Example 2.18.)
+
+\newpage
+  \item[2.71] As in Example 2.38, assume that 90\% of the coins in
+    circulation are fair, and the remaining $10 \%$ are biased coins
+    that give tails with probability $3 / 5$. I hold a randomly chosen
+    coin and begin to flip it.
+    \begin{enumerate}
+      \item After one flip that results in tails, what is the
+        probability that the coin I hold is a biased coin? After two
+        flips that both give tails? After $n$ flips that all come out
+        tails?
+
+      \item After how many straight tails can we say that with 90\%
+        probability the coin I hold is biased?
+
+      \item After $n$ straight tails, what is the probability that the
+        next flip is also tails?
+    \end{enumerate}
+
+\newpage
+  \item[3.2] Suppose the random variable $X$ has possible values
+    $\{1,2,3,4,5,6\}$ and probability mass function of the form
+    $p(k)=c k$.
+
+    \begin{enumerate}
+      \item Find $c$.
+
+      \item Find the probability that $X$ is odd.
+    \end{enumerate}
+
+
+\newpage
+  \item[3.25] In each of the following cases find all values of $b$ for
+    which the given function is a probability density function.
+    \begin{enumerate}
+      \item 
+        \[ f(x)=
+          \begin{cases}
+            x^{2}-b, & \text { if } 1 \leq x \leq 3 \\
+            0, & \text { otherwise }
+          \end{cases}
+        \]
+
+      \item
+        \[ h(x)=
+          \begin{cases}
+            \cos x, & \text { if }-b \leq x \leq b \\
+            0, & \text { otherwise. }
+          \end{cases}
+        \]
+
+    \end{enumerate}
+
+  \item[3.31] Suppose a random variable $X$ has density function
+
+    \[ f(x)=
+      \begin{cases}
+        c x^{-4}, & \text { if } x \geq 1 \\
+        0, & \text { else }
+      \end{cases}
+      \]
+    where $c$ is a constant.
+    \begin{enumerate}
+      \item What must be the value of $c$ ?
+      \item Find $P(0.5<X<1)$.
+      \item Find $P(0.5<X<2)$.
+      \item Find $P(2<X<4)$.
+      \item Find the cumulative distribution function $F_{X}(x)$.
+    \end{enumerate}
+
+\end{itemize}
+\end{document}
