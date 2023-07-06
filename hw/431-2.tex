@@ -1,0 +1,383 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+%\usepackage{enumitem}
+\usepackage[inline]{enumitem}
+
+%\input{.tex/preamble}
+%\input{.tex/macros}
+%\input{.tex/letterfonts}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Homework 1}
+
+\author{Guy Matz}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+
+  \item[2.10] I have a bag with 3 fair dice. One is 4-sided, one is 6-sided, and one is 12-sided. I reach into the bag, pick one die at random and roll it. The outcome of the roll is 4 . What is the probability that I pulled out the 6-sided die?
+
+    Let $Y = \{\# \text{ Rolled }\}, X = \{\text{Dice Picked}\}$
+
+    \[ P(X=6|Y=4) = \frac{P(X=6, Y=4)}{P(Y=4)} \]
+    \[
+      = \frac{P(Y=4|X=6)P(X=6)}{P(Y=4|X=4)P(X=4) + P(Y=4|X=6)P(X=6)
+      + P(Y=4|X=12)P(X=12) } 
+    \]
+
+    \[ = \frac{\frac{1}{6} \cdot \frac{1}{3} } { \frac{1}{4} \cdot \frac{1}{3} + \frac{1}{6} \cdot \frac{1}{3} + \frac{1}{12} \cdot \frac{1}{3} }  \]
+
+    \[ = \frac{1}{3}  \]
+
+\newpage
+  \item[2.18] We choose a number from the set $\{10,11,12, \ldots, 99\}$
+    uniformly at random.
+
+    \begin{enumerate}
+      \item Let $X$ be the first digit and $Y$ the second digit of the chosen number. Show that $X$ and $Y$ are independent random variables.
+
+    Let $X = \{1, \dots , 9\}, Y = \{0, \dots, 9\}$.  Then
+    \[ P(X=n) = \frac{1}{9}, P(Y=n) = \frac{1}{10}  \]
+
+    And 
+      \[ P(X=n) \cdot P(Y=m) = \frac{1}{9} \cdot \frac{1}{10} = \frac{1}{90}  \]
+    And
+    \[
+      P(X=n \cap Y=m) = \frac{P(X=n|Y=m)}{P(Y=m)}
+    = \frac{\frac{1}{9}}{\frac{1}{10}} = \frac{1}{90}
+   \]
+      \item Let $X$ be the first digit of the chosen number and $Z$ the sum of the two digits. Show that $X$ and $Z$ are not independent.
+
+    Let $X = \{1, \dots , 9\}, Z = \{1, \dots, 18\}$.  Then
+    \[ P(X=n) = \frac{1}{9}, P(Z=m) = \frac{\binom{18}{m}}{90}  \]
+
+    And 
+      \[ P(X=n) \cdot P(Z=m) = \frac{1}{9} \cdot \frac{\binom{18}{m}}{90}  = \frac{\binom{18}{m}}{810}  \]
+    But
+    \[
+      P(X=1 \cap Z=18) = \frac{P(X=1|Z=18)}{P(Z=18)}
+    = \frac{0}{\frac{1}{90}} = 0
+    \]
+    \end{enumerate}
+
+\newpage
+  \item[2.34] You play the following game against your friend. You have two urns and three balls. One of the balls is marked. You get to place the balls in the two urns any way you please, including leaving one urn empty. Your friend will choose one urn at random and then draw a ball from that urn. (If he chose an empty urn, there is no ball.) His goal is to draw the marked ball.
+
+    \begin{enumerate}
+      \item How would you arrange the balls in the urns to minimize his chances of drawing the marked ball?
+
+        I would put all of the balls into one urn.  Then the chance of
+        finding the ball would be
+        \[ \frac{1}{2} \cdot 0 + \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}  \]
+
+      \item How would your friend arrange the balls in the urns to maximize his chances of drawing the marked ball?
+
+        He should put the balls into its own urn.  Then the chance of
+        finding the ball would be
+        \[ \frac{1}{2} \cdot 0 + \frac{1}{2} \cdot 1 = \frac{1}{2}  \]
+
+      \item Repeat (a) and (b) for the case of $n$ balls with one marked ball.
+        \begin{enumerate}
+          \item How would you arrange the balls in the urns to minimize
+            his chances of drawing the marked ball?
+
+            I would put all of the balls into one urn.  Then the chance of
+            finding the ball would be
+            \[ \frac{1}{2} \cdot 0 + \frac{1}{2} \cdot \frac{1}{n} =
+            \frac{1}{2n}  \]
+
+          \item How would your friend arrange the balls in the urns to
+            maximize his chances of drawing the marked ball?
+
+            He should put the ball into its own urn.  Then the chance of
+            finding the ball would be
+            \[ \frac{1}{2} \cdot 0 + \frac{1}{2} \cdot 1 = \frac{1}{2}  \]
+        \end{enumerate}
+
+    \end{enumerate}
+
+
+\newpage
+  \item[2.54] Let $A$ and $B$ be events with these properties: $0<P(B)<1$
+    and $P(A \mid B)=P\left(A \mid B^{c}\right)=\frac{1}{3}$.
+    \begin{enumerate}
+      \item Is it possible to calculate $P(A)$ from this information?
+        Either declare that it is not possible, or find the value of
+
+        Yes!
+        \[ A = A \cap \Omega = A \cap (B \cup B^c) = (A \cap B) \cup (A \cap B^c)\]
+        So
+        \[ P(A) = P((A \cap B) + (A \cap B^c))\]
+        And
+        \begin{align*}
+          P(A) &= P(A | B) \cdot P(B) + P(A \cap B^c) \cdot P(B^c) \\
+               &= \frac{1}{3}  \cdot P(B) + \frac{1}{3} \cdot P(B^c) \\
+               &= \frac{1}{3}  ( P(B) + P(B^c) ) \\
+               &= \frac{1}{3}  \cdot ( 1 ) \\
+               &= \frac{1}{3}
+        \end{align*}
+
+      \item Are $A$ and $B$ independent, not independent, or is it
+        impossible to determine?
+
+        So we want to check
+        \[ P(A \cap B) = P(A) \cdot P(B) \]
+        We can rewrite this as
+          \[ P(A|B) \cdot P(B) = P(A) \cdot P(B) \]
+        Dividing both sides by $P(B)$ gives us
+            \[ P(A|B) = P(A) \]
+        We have an equality here, so the $A$ and $B$ are independent!
+
+    \end{enumerate}
+
+\newpage
+  \item[2.61] Suppose an urn has 3 green balls and 4 red balls.
+    \begin{enumerate}
+      \item Nine draws are made with replacement. Let $X$ be the number
+        of times a green ball appeared. Identify by name the probability
+        distribution of $X$. Find the probabilities $P(X \geq 1)$ and
+        $P(X \leq 5)$.
+
+        \begin{itemize}
+          \item Distribution: $X \sim$ Bin(9,$\frac{3}{7})$
+          \item $P(X \geq 1) = 1- P(X=0) = 1 -
+            \binom{9}{0} \left( \frac{3}{7} \right)^0
+                        \left( \frac{4}{7} \right)^9 = 1 - \left( \frac{4}{7} \right)^9 $
+          \item $P(X \leq 5) = \sum^{5}_{n=1} \binom{9}{i}  
+                           \left( \frac{3}{7} \right)^i
+                           \left( \frac{4}{7} \right)^{9-i}
+                       $
+        \end{itemize}
+
+      \item Draws with replacement are made until the first green ball
+        appears. Let $N$ be the number of draws that were needed.
+        Identify by name the probability distribution of $N$. Find the
+        probability $P(N \leq 9)$.
+        \begin{itemize}
+          \item Distribution: $X \sim$ Geom($\frac{3}{7})$
+          \item $P(N \leq 9) = 1 - P(N=0) = 1 - \frac{4}{7}^9$
+        \end{itemize}
+
+      \item Compare $P(X \geq 1)$ and $P(N \leq 9)$. Is there a reason
+        these should be the same?
+
+        They should be the same since they are both asking for the 
+        probability that a green ball will appear at least once.
+    \end{enumerate}
+
+\newpage
+  \item[2.70] Flip a coin three times. Assume the probability of tails is
+    $p$ and that successive flips are independent. Let $A$ be the event
+    that we have exactly one tails among the first two coin flips and $B$
+    the event that we have exactly one tails among the last two coin
+    flips. For which values of $p$ are events $A$ and $B$ independent?
+    (This generalizes Example 2.18.)
+
+    \[ 
+      A = \{ \{T,H,H\}, \{T,H,T\}, \{H,T,H\}, \{H,T,T \} \}
+    \]
+      \[
+      B = \{ \{T,T,H\}, \{T,H,T\}, \{H,T,H\}, \{H,H,T \} \} \\
+    \]
+      \[
+      A \cap B = \{ \{T,H,T\}, \{H,T,H\} \} \} \\
+    \]
+    \[ 
+      P(A) = P(B) = 2p^2(1-p) + 2p(1-p)^2
+    \]
+    \[ 
+      P(A \cap B) = p^2(1-p) + p(1-p)^2
+    \]
+    Now!  What value of $p$ makes $P(A \cap B) = P(A) \cdot P(B)$?
+    \begin{align*}
+      P(A \cap B) &= P(A) \cdot P(B) \\
+      p^2(1-p) + p(1-p)^2 &= (2p^2(1-p) + 2p(1-p)^2) \cdot (2p^2(1-p) + 2p(1-p)^2) \\
+      p^2+p -2p^2       &= (2p^2 -2p^2)^2 \\
+      p(1 -p)      &= 4p^2(1-p)^2 \\
+      p      &= 4p^2(1-p) \\
+      1      &= 4p- 4p^2 \\
+      0      &= - 4p^2 4p -1 \\
+      0      &= (p - \frac{1}{2} ) \cdot (p - \frac{1}{2} ) \\
+      \frac{1}{2} &= p
+    \end{align*}
+\newpage
+  \item[2.71] As in Example 2.38, assume that 90\% of the coins in
+    circulation are fair, and the remaining $10 \%$ are biased coins
+    that give tails with probability $3 / 5$. I hold a randomly chosen
+    coin and begin to flip it.
+    \begin{enumerate}
+      \item After one flip that results in tails, what is the
+        probability that the coin I hold is a biased coin? After two
+        flips that both give tails? After $n$ flips that all come out
+        tails?
+
+        \begin{align*}
+          P(C=F) = 0.9 \\
+          P(C=B) = 0.1 \\
+          P(X=T|C=F) = 0.5 \\
+          P(X=T|C=B) = 0.6
+        \end{align**}
+        \begin{enumerate}
+          \item $X_1 = T$
+            \begin{align*}
+              P(C=B|X_1=T) &= \frac{P(X_1=T \cap C=B)}{P(X_1=T)}  \\
+                   &= \frac{P(X_1=T | C=B)P(C=B)}
+                  {P(X_1=T | C=B)P(C=B) + P(X_1=T | C=F)P(C=F)}  \\
+                   &= \frac{ \frac{3}{5} \cdot \frac{1}{10} } 
+                   {\frac{3}{5} \cdot \frac{1}{10} + \frac{1}{2} \cdot \frac{9}{10} }\\
+                   &= \frac{6}{55} \approx .109
+            \end{align*}
+          \item $X_2 = T$
+            \begin{align*}
+              P(C=B|X_2=T) &= \frac{P(X_2=T \cap C=B)}{P(X_2=T)}  \\
+                   &= \frac{P(X_2=T | C=B)P(C=B)}
+                  {P(X_2=T | C=B)P(C=B) + P(X_2=T | C=F)P(C=F)}  \\
+                   &= \frac{ \frac{3}{5} \cdot \frac{6}{55} } 
+                   {\frac{3}{5} \cdot \frac{6}{55} + \frac{1}{2} \cdot \frac{49}{55} }\\
+                   &\approx .128
+            \end{align*}
+
+
+        \end{enumerate}
+
+      \item After how many straight tails can we say that with 90\%
+        probability the coin I hold is biased?
+
+        Running this through python, where,
+        pcb = P(Coin is Biased)\\
+        pxtcb = P(Flip is Tail | Coin Biased)\\
+        pcf = P(Coin is Fair)\\
+        pxtcf = P(Flip is Tail | Coin Fair)\\
+
+        \begin{verbatim}
+        for i in range(1,30):
+          pcb = (pxtcb * pcb) / (pxtcb * pcb + pxtcf * pcf)
+          pcf = 1 - pcb
+          print(i, pcb)
+        \end{verbatim}
+
+        We get: $n=20$
+
+      \item After $n$ straight tails, what is the probability that the
+        next flip is also tails?
+
+        The probabilities remain the same
+
+    \end{enumerate}
+
+\newpage
+  \item[3.2] Suppose the random variable $X$ has possible values
+    $\{1,2,3,4,5,6\}$ and probability mass function of the form
+    $p(k)=c k$.
+
+    \begin{enumerate}
+      \item Find $c$.
+
+        $P(X=1) =c , P(X=2) = 2c, \dots, P(X=6) = 6c$
+        So
+        \[ P(X=k) = \frac{k}{\sum^{6}_{n=1} n} = \frac{k}{21}   \]
+
+      \item Find the probability that $X$ is odd.
+         \begin{align*}
+           P(X \in \{1,3,5\}) &= P(X=1) + P(X=3) + P(X=5) \\
+                        &= \frac{1}{21} + \frac{3}{21} + \frac{5}{21} \\
+                        &= \frac{9}{21}  \\
+                        &= \frac{3}{7} 
+         \end{align*}
+    \end{enumerate}
+
+
+\newpage
+  \item[3.25] In each of the following cases find all values of $b$ for
+    which the given function is a probability density function.
+    \begin{enumerate}
+      \item 
+        \[ f(x)=
+          \begin{cases}
+            x^{2}-b, & \text { if } 1 \leq x \leq 3 \\
+            0, & \text { otherwise }
+          \end{cases}
+        \]
+    \begin{align*}
+      \int_{1}^{3} {x^2 - b} \: d{x} &= \frac{x^3}{3} -bx \bigg\rvert_1^3 \\
+                        &= \frac{9}{3} -3b - (\frac{1}{3} b)
+    \end{align*}
+    So $b = \frac{5}{6} $
+
+      \item
+        \[ h(x)=
+          \begin{cases}
+            \cos x, & \text { if }-b \leq x \leq b \\
+            0, & \text { otherwise. }
+          \end{cases}
+        \]
+        We need to find a solution for b that makes the integral equal 1
+    \begin{align*}
+    1 &= \int_{-b}^{b} {cos(x)} \: d{x} \\
+        &= sin(x) \bigg\rvert_{-b}^b \\
+                        &= sin(b) - sin(-b) \\
+                        &= 0
+    \end{align*}
+    D'oh!
+
+    \end{enumerate}
+
+\newpage
+  \item[3.31] Suppose a random variable $X$ has density function
+
+    \[ f(x)=
+      \begin{cases}
+        c x^{-4}, & \text { if } x \geq 1 \\
+        0, & \text { else }
+      \end{cases}
+      \]
+    where $c$ is a constant.
+    \begin{enumerate}
+      \item What must be the value of $c$ ?
+
+    \begin{align*}
+      1 &= \int_{1}^{\infty} {cx^{-4}} \: d{x} \\
+        &= -\frac{cx^{-3}}{3} \bigg\rvert_1^{\infty}
+        &= 0 - -\frac{c}{3} 
+        &= \frac{c}{3}
+    \end{align*}
+    So $c = 3$
+        
+      \item Find $P(0.5<X<1)$.
+          \[ 0 \]
+      \item Find $P(0.5<X<2)$.
+        \begin{align*}
+          P(0.5<X<2) &= \int_{1}^{2} {3x^{-4}} \: d{x} \\
+            &= -x^{-3} \bigg\rvert_1^{2} \\
+            &= -\frac{1}{2^3} + 1 \\
+            &= \frac{7}{8}
+        \end{align*}
+          
+      \item Find $P(2<X<4)$.
+        \begin{align*}
+          P(2<X<4) &= \int_{2}^{4} {3x^{-4}} \: d{x} \\
+            &= -x^{-3} \bigg\rvert_2^{4} \\
+            &= -\frac{1}{4^3} + \frac{1}{2^3}  \\
+            &= \frac{7}{64}
+        \end{align*}
+      \item Find the cumulative distribution function $F_{X}(x)$.
+
+        \[ 
+          F_{X}(x) = \int_{1}^{x} 3t^{-4} d{t} = 1 - x^{-3}
+        \]
+    \end{enumerate}
+
+\end{itemize}
+\end{document}
