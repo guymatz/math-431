@@ -1,0 +1,106 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+%\usepackage{enumitem}
+\usepackage[inline]{enumitem}
+
+%\input{.tex/preamble}
+%\input{.tex/macros}
+%\input{.tex/letterfonts}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Homework 1}
+
+\author{Guy Matz}
+\date{\today}
+
+
+\begin{document}
+
+\begin{enumerate}
+
+  \item We flip a fair coin 4 times. What is the conditional probability of seeing exactly 2 heads among the 4 coin flips given that there were an even number of heads among the first two coin flips?
+
+  \[ P(H=2 | N_2 = {0,2}) = \frac{P(H=2 \cap (N_2 = 0 \cup N_2 = 2))}{P(N_2 = 0 \cup N_2 = 2)} \]
+  \[  = \frac{P((H=2 \cap N_2 = 0) \cup (H=2 \cap N_2 = 2))}{P(N_2 = 0) + P(N_2 = 2)} \]
+  \[ \frac{ \frac{1}{16} + \frac{1}{16} }{ \frac{4}{16} + \frac{4}{16} }  \]
+  \[ = \frac{ \frac{1}{8} }{ \frac{4}{8} }  \]
+  \[ = \frac{2}{8} \]
+
+  Total = 1/4
+
+\newpage
+  \item You have a deck of 52 cards and you deal 4 cards (one-by-one). Find the conditional probability that the last card is a king given that the other cards are queens.
+
+    4/49
+
+\newpage
+  \item Suppose P(A) = 0.29, P(B) = 0.4, and P(A|B) = 0.17. Compute P(B|A).
+    \[ P(A|B) = \frac{P(A \cap B)}{P(B)},  P(A|B)\cdot P(B) = P(A \cap B)\]
+    \[ P(B|A) = \frac{P(A \cap B)}{P(A)} = \frac{P(A|B) \cdot P(B)}{P(A)}\]
+    \[ = \frac{.17 * .4}{.29} = .2344 \]
+\newpage
+\item We choose a number uniformly at random from the set
+  $\{1, \dots, 30\}$
+. Consider the following events:
+
+A={the chosen number is divisible by 2} \\
+B={the chosen number is divisible by 3} \\
+C={the chosen number is divisible by 5} \\
+D={the chosen number is divisible by 7}
+
+Which of the following statements are true?
+
+Hint: Answers are more than 1.
+
+  \begin{itemize}
+    \item B and D are independent $\chi$
+    \item A and C are independent \checkmark
+    \item A and B are independent $\chi$
+    \item B and C are independent \checkmark
+  \end{itemize}
+ 
+\newpage
+\item The random variable X has binomial distribution with parameters n=7 and p=0.4. Find the probability that X is divisible by 3. 
+
+  \[ P(X = 0) = \binom{7}{0} (.4)^0 (.6)^7 \]
+  \[ P(X = 3) = \binom{7}{3} (.4)^3 (.6)^4 \]
+  \[ P(X = 6) = \binom{7}{6} (.4)^6 (.6)^1 \]
+  \[ P(X=0) + P(X=3) + P(X=6) =  0.02799 + 0.29030 + 0.01720 = 0.33549 \]
+
+\newpage
+Each day, starting with January 1, 2023, Olivia rolls three fair dice, and she records the three numbers she got. For each of the following random variables find the corresponding named distribution.
+
+  \begin{enumerate}
+    \item Geometric
+    \item Hypergeometric
+    \item Binomial
+    \item Bernoulli
+  \end{enumerate}
+
+ 
+\item The random variable that counts the total number of sixes seen by Olivia in the second week of June.
+
+  c - Binomial
+
+\item The random variable that is one if the three numbers are the same on July 4, and zero otherwise.
+
+  d - Bernoulli
+
+\item The random variable that counts how many days will it take for Olivia to see three sixes on a particular day.
+
+  a - Geometric
+
+\item The random variable that counts how many sixes Olivia sees on October 1.
+
+  b - HyperGeometric
+
+\end{enumerate}
+\end{document}
