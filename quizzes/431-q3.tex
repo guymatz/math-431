@@ -1,0 +1,70 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+%\usepackage{enumitem}
+\usepackage[inline]{enumitem}
+
+%\input{.tex/preamble}
+%\input{.tex/macros}
+%\input{.tex/letterfonts}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Quiz 3}
+
+\author{Guy Matz}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+
+  \item Let X be a uniform random variable on the interval [1.3, 4.2]. What is the probability that X is within 0.1 of an integer number?
+
+\newpage
+  \item Suppose that the random variable Z has binomial distribution with parameters n=7 and p=0.3. Find the value of the cumulative distribution function of Z at 2.4.
+
+    See Example 3.11 on p 96
+
+\newpage
+  \item The following picture shows the cumulative distribution function of a random variable X (on the interval [-0.5,3.5]). Please decide for each of the following statements whether they are correct or not.
+    \begin{figure}
+      \includegraphics[width=\linewidth]{quiz3-q3.png}
+      \caption{Hint: Answers are more than 1.}
+    \end{figure}
+
+    \begin{enumerate}
+      \item X has three possible values.
+      \item  $P(X=2) = 1/2$
+      \item X is a continuous random variable.
+      \item  $P(X \leq 3/2) = 1/4$
+    \end{enumerate}
+
+\newpage
+  \item $X$ is a continuous random variable with the following probability density function:
+$$
+f(x)= \begin{cases}\frac{4}{x^5}, & x \geq 1 \\ 0, & x \geq 0\end{cases}
+$$
+Which of the following expectations are finite?
+$E[X]$
+$E\left[X^8\right]$
+$E\left[X^4\right]$
+$E\left[X^2\right]$
+
+\newpage
+  \item The random variable $\mathrm{Z}$ has mean 0 and variance 2 . Compute the expectation $E\left[(2 X-1)^2\right]$.
+
+\newpage
+  \item Let $\mathrm{V}$ be a normal random variable with expected value 0.0 and variance 2 . Find the value $u$, for which $P(V>2)=\Phi(u)$
+
+\newpage
+  \item $X$ and $Y$ are independent random variables. $X$ has geometric distribution with parameter $p=0.5$, and $Y$ has exponential distribution with parameter $\lambda=4.7$. What is the upper bound we can give for the probability $P(X+Y \geq c)$ with $\mathrm{c}=15$ using Markov's inequality?
+\end{enumerate}
+\end{document}
