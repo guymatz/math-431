@@ -1,0 +1,47 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+%\usepackage{enumitem}
+\usepackage[inline]{enumitem}
+
+%\input{.tex/preamble}
+%\input{.tex/macros}
+%\input{.tex/letterfonts}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Quiz 3}
+
+\author{Guy Matz}
+\date{20230714}
+
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+
+  \item Use normal approximation (without continuity correction) to estimate the probability that out of 598 fair die rolls we get at most 205 numbers that are integer multiples of 3 . Your answer should be in the form $\Phi(a)$ for some real number $a$.
+Find the value of $a$.
+\newpage
+  \item We roll a pair of fair dice 10000 times. Use the continuity correction to estimate the probability that there are exactly 265 rolls with double sixes. Your answer should be in the form of $\Phi(b)-\Phi(a)$ for some real numbers $a<b$
+Find the value of $b$.
+
+\newpage
+  \item The probability of a full house in a poker hand of 5 cards is approximately 0.00144 . Use Poisson approximation to estimate the probability that out of 690 poker hands there will be exactly 2 full houses.
+\newpage
+  \item The lifetime of a lightbulb can be modeled with an exponential random variable with mean 808 days. Find the probability that the lightbulb will function for more than 1,604 days given that it is still functional after 575 days.
+\newpage
+  \item Suppose that the random variable $X$ is exponential with parameter 2.0. Find a real number $a$ in the interval $(0,1)$, so that the following two events are independent:
+$$
+A=\{X \in[0,1]\}, \quad B=\{X \in[a, 2]\}
+$$
+\newpage
+  \item Let $X_1, X_2, \ldots, X_{30000}$ be i.i.d. random variables that are uniform on the interval $(0,1)$. Let $\mathrm{S}$ be the sum of these random variables. We estimate the probability $P(S \leq c)$ where c=15,130 with the value $\Phi(x)$ using the Central Limit Theorem. Find the value of $x$.
+\end{enumerate}
+\end{document}
