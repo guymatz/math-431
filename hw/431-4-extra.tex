@@ -1,0 +1,171 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Extra Homework 4}
+
+\author{Guy Matz}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\hfill \break
+Exercise 4.8. In a million rolls of a biased die the number 6 shows up 180,000 times. Find a $99.9 \%$ confidence interval for the unknown probability that the die rolls 6.
+
+\hfill \break
+Exercise 4.11. On the first 300 pages of a book, you notice that there are, on average, 6 typos per page. What is the probability that there will be at least 4 typos on page 301? State clearly the assumptions you are making.
+
+\hfill \break
+Exercise 4.12. Let $T \sim \operatorname{Exp}(\lambda)$. Compute $E\left[T^{3}\right]$.
+
+Hint. Use integration by parts and (4.18).
+
+\hfill \break
+Exercise 4.26. 100 randomly chosen individuals were interviewed to estimate the unknown fraction $p \in(0,1)$ of the population that prefers whole milk to skim milk. The resulting estimate is $\widehat{p}$. With what level of confidence can we state that the true $p$ lies in the interval $(\hat{p}-0.1, \hat{p}+0.1)$ ?
+
+\hfill \break
+Exercise 4.27. A marketing firm wants to determine what proportion $p \in(0,1)$ of targeted customers prefer strawberries to blueberries. They poll $n$ randomly chosen customers and discover that $X$ of them prefer strawberries. How large should $n$ be in order to know with at least 0.9 certainty that the true $p$ is within 0.1 of the estimate $X / n$ ?
+
+\hfill \break
+Exercise 4.33. In a call center the number of received calls in a day can be modeled by a Poisson random variable. We know that on average about $0.5 \%$ of the time the call center receives no calls at all. What is the average number of calls per day?
+
+\hfill \break
+Exercise 4.34. A taxi company has a large fleet of cars. On average, there are 3 accidents each week. What is the probability that at most 2 accidents happen next week? Make some reasonable assumption in order to be able to answer the question. Simplify your answer as much as possible.
+
+\hfill \break
+Exercise 4.36. How many randomly chosen guests should I invite to my party so that the probability of having a guest with the same birthday as mine is at least $2 / 3$ ?
+
+\hfill \break
+Exercise 4.37. In low-scoring team sports (e.g. soccer, hockey) the number of goals per game can often be approximated by a Poisson random variable. (Can you explain why?) In the 2014-2015 season 8.16\% of the games in the English Premier League ended in a scoreless tie (this means that there were no goals in the game). How would you estimate the percentage of games where exactly one goal was scored?
+
+\hfill \break
+Exercise 4.39. A "wheat cent" is a one-cent coin (\$0.01) produced in the United States between 1909 and 1956. The name comes from a picture of wheat on the back of the coin. Assume that 1 out of every 350 pennies in circulation is a wheat cent and that wheat cents are uniformly distributed among all pennies.
+
+Cassandra the coin collector goes to the bank and withdraws 4 dollars' worth of pennies (in other words, 400 pennies).
+
+(a) Write an expression for the exact probability that Cassandra finds at least 2 wheat cents among her 400 pennies.
+
+(b) Use either the Poisson or normal approximation, whichever is appropriate, to estimate the probability that Cassandra finds at least 2 wheat cents among her 400 pennies.
+
+\hfill \break
+Exercise 4.40. We have an urn with 10 balls numbered from 1 to 10 . We choose a sample of 111 with replacement. Approximate the probability of the event that the number one appears at most 3 times in the sample. Use both the normal and the Poisson approximation, and compare the results with the exact probability 0.00327556 .
+
+\hfill \break
+Exercise 4.41. We roll a die 72 times. Approximate the probability of getting exactly 3 sixes with both the normal and the Poisson approximation and compare the results with the exact probability 0.000949681 .
+
+\hfill \break
+Exercise 4.42 . On average $20 \%$ of the gadgets produced by a factory are mildly defective. I buy a box of 100 gadgets. Assume this is a random sample from the production of the factory. Let $A$ be the event that less than 15 gadgets in the random sample of 100 are mildly defective. (a) Give an exact expression for $P(A)$, without attempting to evaluate it.
+
+(b) Use either the normal or the Poisson approximation, whichever is appropriate, to give an approximation of $P(A)$.
+
+\hfill \break
+Exercise 4.43. Suppose $10 \%$ of households earn over 80,000 dollars a year, and $0.25 \%$ of households earn over 450,000 . A random sample of 400 households has been chosen. In this sample, let $X$ be the number of households that earn over 80,000 , and let $Y$ be the number of households that earn over 450,000. Use the normal and Poisson approximation, whichever is appropriate in either case, to find the simplest estimates you can for the probabilities $P(X \geq 48)$ and $P(Y \geq 2)$
+
+\hfill \break
+Exercise 4.44. Suppose that $50 \%$ of all watches produced by a certain factory are defective (the other $50 \%$ are fine). A store buys a box with 400 watches produced by this factory. Assume this is a random sample from the factory.
+
+(a) Write an expression for the exact probability that at least 215 of the 400 watches are defective.
+
+(b) Approximate the probability, using either the Poisson or normal approximation, whichever is appropriate, that at least 215 of the 400 watches are defective.
+
+\hfill \break
+Exercise 4.45. Estimate the probability that out of 10,000 poker hands (of 5 cards) we will see no four of a kinds. Use either the normal or the Poisson approximation, whichever is appropriate. Justify your choice of approximation.
+
+\hfill \break
+Exercise 4.46. Jessica flips a fair coin 5 times every morning, for 30 days straight. Let $X$ be the number of mornings over these 30 days on which all 5 flips are tails. Use either the normal or the Poisson approximation, whichever is more appropriate, to give an estimate for the probability $P(X=2)$. Justify your choice of approximation.
+
+\hfill \break
+Exercise 4.47. Each day John performs the following experiment: he flips a coin repeatedly until he gets tails and counts the number of coin flips needed.
+
+(a) Approximate the probability that in a year there are at least 3 days when he needed more than 10 coin flips.
+
+(b) Approximate the probability that in a year there are more than 50 days when he needed exactly 3 coin flips.
+
+\hfill \break
+Exercise 5.3. Let $X \sim \operatorname{Unif}[0,1]$. Find the moment generating function $M(t)$ of $X$. Note that the calculation of $M(t)$ for $t \neq 0$ puts a $t$ in the denominator, hence the value $M(0)$ has to be calculated separately.
+
+\hfill \break
+Exercise 5.4. In parts (a)-(d) below, either use the information given to determine the distribution of the random variable, or show that the information given is not sufficient by describing at least two different random variables that satisfy the given condition. (a) $X$ is a random variable such that $M_{X}(t)=e^{6 t^{2}}$ when $|t|<2$.
+
+(b) $Y$ is a random variable such that $M_{Y}(t)=\frac{2}{2-t}$ for $t<0.5$.
+
+(c) $Z$ is a random variable such that $M_{Z}(t)=\infty$ for $t \geq 5$.
+
+(d) $W$ is a random variable such that $M_{W}(2)=2$.
+
+\hfill \break
+Exercise 5.10. Suppose that $X$ has moment generating function
+
+$$
+M(t)=\left(\frac{1}{5}+\frac{4}{5} e^{t}\right)^{30}
+$$
+
+What is the distribution of $X$ ?
+
+Hint. Do Exercise 5.9 first.
+
+\hfill \break
+Exercise 5.11. The random variable $X$ has the following probability density function:
+
+$$
+f_{X}(x)= \begin{cases}x e^{-x}, & \text { if } x>0 \\ 0, & \text { otherwise }\end{cases}
+$$
+
+(a) Find the moment generating function of $X$.
+
+(b) Using the moment generating function of $X$, find $E\left[X^{n}\right]$ for all positive integers $n$. Your final answer should be an expression that depends only on $n$.
+
+\hfill \break
+Exercise 5.18. Let $X \sim \operatorname{Geom}(p)$.
+
+(a) Compute the moment generating function $M_{X}(t)$ of $X$. Be careful about the possibility that $M_{X}(t)$ might be infinite.
+
+(b) Use the moment generating function to compute the mean and the variance of $X$.
+
+\hfill \break
+Exercise 5.20. Suppose that random variable $X$ has density function $f(x)=$ $\frac{1}{2} e^{-|x|}$
+
+(a) Compute the moment generating function $M_{X}(t)$ of $X$. Be careful about the possibility that $M_{X}(t)$ might be infinite.
+
+(b) Use the moment generating function to compute the $n$th moment of $X$.
+
+\hfill \break
+Exercise 9.5. Suppose that $X$ is a nonnegative random variable with $E[X]=10$.
+
+(a) Give an upper bound on the probability that $X$ is larger than 15 .
+
+(b) Suppose that we also know that $\operatorname{Var}(X)=3$. Give a better upper bound on $P(X>15)$ than in part (a).
+
+(c) Suppose that $Y_{1}, Y_{2}, \ldots, Y_{300}$ are i.i.d. random variables with the same distribution as $X$ so that, in particular, $E\left(Y_{i}\right)=10$ and $\operatorname{Var}\left(Y_{i}\right)=3$. Estimate the probability that $\sum_{i=1}^{300} Y_{i}$ is larger than 3030.
+
+\hfill \break
+Exercise 9.6. Nate is a competitive eater specializing in eating hot dogs. From past experience we know that it takes him on average 15 seconds to consume one hot dog, with a standard deviation of 4 seconds. In this year's hot dog eating contest he hopes to consume 64 hot dogs in just 15 minutes. Use the CLT to approximate the probability that he achieves this feat of skill.
+
+\hfill \break
+Exercise 9.7. A car insurance company has 2500 policy holders. The expected claim paid to a policy holder during a year is $\$ 1000$ with a standard deviation of \$900. What premium should the company charge each policy holder to assure that with probability 0.999 , the premium income will cover the cost of the claims? Compute the answer both with Chebyshev's inequality and with the CLT.
+
+\hfill \break
+Exercise 9.11. Suppose the random variable $X$ is positive and has moment generating function $M_{X}(t)=(1-2 t)^{-3 / 2}$ for $t<\frac{1}{2}$ and $M_{X}(t)=\infty$ for $t \geq \frac{1}{2}$. (a) Use Markov's inequality to bound $P(X>8)$.
+
+(b) Use Chebyshev's inequality to bound $P(X>8)$.
+
+\hfill \break
+Exercise 9.19. A four year old is going to spin around with his arms stretched out 100 times. From past experience, his father knows it takes approximately $1 / 2$ second to perform one full spin, with a standard deviation of $1 / 3 \mathrm{sec}-$ ond. Consider the probability that it will take this child over 55 seconds to complete spinning. Give an upper bound with Chebyshev's inequality and an approximation with the CLT.
+
+\hfill \break
+Exercise 9.23. By mimicking the proof of Theorem 9.5, prove the following variant of Chebyshev's inequality. Theorem. Let $c>0$ and $n>0$ and let $X$ be a random variable with a finite mean $\mu$ and for which $E\left[|X-\mu|^{n}\right]<\infty$. Then we have
+
+$$
+P(X \geq \mu+c) \leq \frac{E\left[|X-\mu|^{n}\right]}{c^{n}}
+$$
+
+\end{document}

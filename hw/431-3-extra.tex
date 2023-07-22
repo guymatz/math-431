@@ -1,0 +1,171 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Extra Homework 4}
+
+\author{Guy Matz}
+\date{\today}
+
+
+\begin{document}
+
+\hfill \break
+Exercise 3.8. Let $X$ be the random variable from Exercise 3.1.
+
+(a) Compute the mean of $X$.
+
+(b) Compute $E[|X-2|]$.
+
+
+\hfill \break
+Exercise 3.20. Let $c>0$ and $X \sim$ Unif[0,c]. Show that the random variable $Y=c-X$ has the same cumulative distribution function as $X$ and hence also the same density function.
+
+\hfill \break
+Exercise 3.24. Suppose $X$ has a discrete distribution with probability mass function given by
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & 1 & 2 & 3 \\
+\hline
+$p_{X}(x)$ & $1 / 7$ & $2 / 7$ & $4 / 7$ \\
+\hline
+\end{tabular}
+\end{center}
+
+(a) What is $P(X \geq 2)$ ?
+
+(b) What is $E\left(\frac{1}{1+X}\right)$ ?
+
+\hfill \break
+Exercise 3.26. Suppose that $X$ is a discrete random variable with possible values $\{1,2, \ldots\}$, and probability mass function
+
+$$
+p_{X}(k)=\frac{c}{k(k+1)}
+$$
+
+with some constant $c>0$.
+
+(a) What is the value of $c$ ?
+
+Hint. $\frac{1}{k(k+1)}=\frac{1}{k}-\frac{1}{k+1}$.
+
+(b) Find $E(X)$.
+
+Hint. Example D.5 could be helpful.
+
+\hfill \break
+Exercise 3.31. Suppose a random variable $X$ has density function
+
+$$
+f(x)= \begin{cases}c x^{-4}, & \text { if } x \geq 1 \\ 0, & \text { else }\end{cases}
+$$
+
+where $c$ is a constant.
+
+(a) What must be the value of $c$ ?
+
+(b) Find $P(0.5<X<1)$.
+
+(c) Find $P(0.5<X<2)$.
+
+(d) Find $P(2<X<4)$.
+
+(e) Find the cumulative distribution function $F_{X}(x)$.
+
+(f) Find $E(X)$ and $\operatorname{Var}(X)$.
+
+(g) Find $E\left[5 X^{2}+3 X\right]$
+
+(h) Find $E\left[X^{n}\right]$ for all integers $n$. Your answer will be a formula that contains $n$.
+
+\hfill \break
+Exercise 3.46. A stick of length $\ell$ is broken at a uniformly chosen random location. We denote the length of the smaller piece by $X$.
+
+(a) Find the cumulative distribution function of $X$.
+
+(b) Find the probability density function of $X$.
+
+
+\hfill \break
+Exercise 3.62. A little boy plays outside in the yard. On his own he would come back inside at a random time uniformly distributed on the interval $[0,1]$. (Let us take the units to be hours.) However, if the boy is not back inside in 45 minutes, his mother brings him in. Let $X$ be the time when the boy comes back inside. (a) Find the cumulative distribution function $F$ of $X$.
+
+(b) Find the mean $E(X)$.
+
+(c) Find the variance $\operatorname{Var}(X)$.
+
+Hint. You should see something analogous in Examples 3.20 and 3.38.
+
+
+\hfill \break
+Exercise 3.66. Let $X$ be a normal random variable with mean 8 and variance 3. Find the value of $\alpha$ such that $P(X>\alpha)=0.15$.
+
+\hfill \break
+Exercise 3.67. Let $Z \sim \mathcal{N}(0,1)$ and $X \sim \mathcal{N}\left(\mu, \sigma^{2}\right)$. This means that $Z$ is a standard normal random variable with mean 0 and variance 1 , while $X$ is a normal random variable with mean $\mu$ and variance $\sigma^{2}$.
+
+(a) Calculate $E\left(Z^{3}\right)$ (this is the third moment of $Z$ ).
+
+(b) Calculate $E\left(X^{3}\right)$.
+
+Hint. Do not integrate with the density function of $X$ unless you love messy integration. Instead use the fact that $X$ can be represented as $X=\sigma Z+\mu$ and expand the cube inside the expectation.
+
+\hfill \break
+Exercise 3.72. In a lumberjack competition a contestant is blindfolded and spun around 9 times. The blindfolded contestant then tries to hit the target point in the middle of a horizontal log with an axe. The contestant receives
+
+\begin{itemize}
+  \item 15 points if his hit is within $3 \mathrm{~cm}$ of the target,
+
+  \item 10 points if his hit is between $3 \mathrm{~cm}$ and $10 \mathrm{~cm}$ off the target,
+
+  \item 5 points if his hit is between $10 \mathrm{~cm}$ and $20 \mathrm{~cm}$ off the target, and
+
+  \item zero points if his hit is $20 \mathrm{~cm}$ or more away from the target (and someone may lose a finger!).
+
+\end{itemize}
+
+Let $Y$ record the position of the hit, so that $Y=y>0$ corresponds to missing the target point to the right by $y \mathrm{~cm}$ and $Y=-y<0$ corresponds to missing the target to the left by $y \mathrm{~cm}$. Assume that $Y$ is normally distributed with mean $\mu=0$ and variance $100 \mathrm{~cm}^{2}$. Find the expected number of points that the contestant wins.
+
+\hfill \break
+Exercise 4.5. Consider the setup of Exercise 4.4. Find the limits below and explain your answer.
+
+(a) Find $\lim _{n \rightarrow \infty} P\left(X_{n}>1.6 n\right)$.
+
+(b) Find $\lim _{n \rightarrow \infty} P\left(X_{n}>1.7 n\right)$.
+
+\hfill \break
+Exercise 9.1. Let $Y$ be a geometric random variable with parameter $p=1 / 6$.
+
+(a) Use Markov's inequality to find an upper bound for $P(Y \geq 16)$. (b) Use Chebyshev's inequality to find an upper bound for $P(Y \geq 16)$.
+
+(c) Explicitly compute the probability $P(Y \geq 16)$ and compare with the upper bounds you derived.
+
+\hfill \break
+Exercise 9.9. Let $X_{i}$ be the amount of money earned by a food truck on State Street on day $i$. From past experience, the owner of the cart knows that $E\left[X_{i}\right]=$ $\$ 5000$.
+
+(a) Give the best possible upper bound for the probability that the cart will earn at least $\$ 7000$ tomorrow.
+
+(b) Answer part (a) again with the extra knowledge that $\operatorname{Var}\left(X_{i}\right)=\$ 4500$.
+
+(c) Continue to assume that for all $i$ we have $E\left[X_{i}\right]=5000$ and $\operatorname{Var}\left(X_{i}\right)=4500$. Assuming that the amount earned on any given day is independent of the earning on other days, how many days does the cart have to be on State Street to ensure, with a probability at least 0.95 , that the cart's average earnings would be between $\$ 4950$ and $\$ 5050$. (Do not use the central limit theorem for this problem.)
+
+\hfill \break
+Exercise 9.14. Chebyshev's inequality does not always give a better estimate than Markov's inequality. Let $X$ be a positive random variable with $E[X]=2$ and $\operatorname{Var}(X)=9$. Find the values of $t>2$ where Markov's inequality gives a better bound for $P(X>t)$ than Chebyshev's inequality.
+
+\hfill \break
+Exercise 9.17. Let $X$ be a Poisson random variable with a parameter of 100 .
+
+(a) Use Markov's inequality to find a bound on $P(X>120)$.
+
+(b) Use Chebyshev's inequality to find a bound on $P(X>120)$.
+
+(c) Using the fact that for $X_{i} \sim$ Poisson(1), independent random variables, $X_{1}+X_{2}+\cdots+X_{n} \sim \operatorname{Poisson}(n)$, use the central limit theorem to approximate the value of $P(X>120)$.
+
+\end{document}

@@ -133,4 +133,64 @@
         \item get 3 different version
       \end{enumerate}
   \end{itemize}
+\chapter*{20230710}%
+  \section{LLN and CLT}%
+    \subsection{Markov's Inequality}%
+    \dfn{ Markov's Inequality }{
+      Let $X$ be a non-negative RV.  Then ffor any $c > 0$,
+      \[ P(X \geq c) \leq \frac{E[X]}{c}  \]
+    }
+    \myproof {
+    \[E[X] \geq E[c\cdot 1_{X \geq c}] =c \cdot P(A) =c \cdot P(X \geq c)\]
+    }
+    \nt{
+      The advantage o Markov's Inequality is that it only requires
+      knowledge of the mean of X to provide a bound.  However, it only
+      gives an upper bound and is not "sharp", i.e. it may be off the
+      mark.
+    }
+
+    \subsection{Chebyshev's Inequality}%
+    \dfn{ Chebyshev's Inequality }{
+      Let $X$ be a RV with a finite mean, $\mu$ and finite variance,
+      $\sigma^2$.  Then ffor any $c \geq 0$ we have
+      \[ P(|X - \mu| \geq c) \leq \frac{var(X)}{c^2}  \]
+    }
+    \myproof {
+      P(|X-\mu) \geq c) = P(|
+    }
+    
+\chapter*{Exam Notes}%
+  \section{Exam I}%
+    \subsection{Discrete Distributions}%
+      \begin{itemize}
+        \item Binomial
+          \begin{itemize}
+            \item use-case: Many trials of Two possible outcome
+            \item 
+          \end{itemize}
+        \item Geometric
+            \begin{itemize}
+              \item pmf: $P(X=k) = p \cdot (1-p)^{k-1}$
+            \end{itemize}
+        \item Hypergeometric
+            \begin{itemize}
+              \item use-case: Sample drawn without replacement
+              \item pmf: $P(X=k) = \frac{\binom{N_A}{k}\binom{N-N_A}{n-k}}{\binom{N}{n}} 
+            \end{itemize}
+
+      \end{itemize}
+    \subsection{Continuous Distributions}%
+      \begin{itemize}
+        \item Normal
+          \begin{itemize}
+            \item Estimation metric:  $np(1-p) > 10$
+          \end{itemize}
+        \item Poisson
+            \begin{itemize}
+              \item pdf: $\frac{\lambda^k}{k!} e^{-\lambda}
+              \item Estimation metric: $np(1-p) < 10$
+            \end{itemize}
+      \end{itemize}
+    
 \end{document}

@@ -1,0 +1,100 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+%\usepackage{enumitem}
+\usepackage[inline]{enumitem}
+
+%\input{.tex/preamble}
+%\input{.tex/macros}
+%\input{.tex/letterfonts}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Homework 4}
+
+\author{Guy Matz}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+
+  \item[4.4]  Liz is standing on the real number line at position 0. She rolls a die repeatedly. If the roll is 1 or 2 , she takes one step to the right (in the positive direction). If the roll is $3,4,5$ or 6 , she takes two steps to the right. Let $X_{n}$ be Liz's position after $n$ rolls of the die. Estimate the probability that $X_{90}$ is at least 160 .
+
+\newpage
+  \item[4.6]  A pollster would like to estimate the fraction $p$ of people in a population who intend to vote for a particular candidate. How large must a random sample be in order to be at least 95\% certain that the fraction $\hat{p}$ of positive answers in the sample is within 0.02 of the true $p$ ?
+
+\newpage
+  \item[4.7]  A political interest group wants to determine what fraction $p \in$ $(0,1)$ of the population intends to vote for candidate $A$ in the next election. 1000 randomly chosen individuals are polled. 457 of these indicate that they intend to vote for candidate A. Find the 95\% confidence interval for the true fraction $p$.
+
+\newpage
+  \item[4.10]  A hockey player scores at least one goal in roughly half of his games. How would you estimate the percentage of games where he scores a hat-trick (three goals)?
+
+\newpage
+  \item[4.24]  We roll a fair die repeatedly and keep track of the observed frequencies of the outcomes $1,2, \ldots, 6$.
+
+(a) Show that the probability of seeing at least 17\% fours converges to zero as the number of rolls tends to infinity.
+
+(b) Let $A_{n}$ be the event that after $n$ rolls, the frequencies of all six outcomes are between $16 \%$ and $17 \%$. Show that for a large enough number of rolls, the probability of $A_{n}$ is at least 0.999 .
+
+Hint. Examples 4.9 and 4.10 point the way. Additionally, in part (b) use unions or intersections.
+
+\newpage
+  \item[4.35]  Every morning Jack flips a fair coin ten times. He does this for an entire year. Let $X$ denote the number of days when all the flips come out the same way (all heads or all tails).
+
+    \begin{enumerate}
+      \item  Give the precise expression for the probability $P(X>1)$.
+
+      \item  Apply either the normal or the Poisson approximation to give a simple estimate for $P(X>1)$. Explain your choice of approximation.
+    \end{enumerate}
+
+\newpage
+  \item[5.2]  Suppose that $X$ has moment generating function
+
+$$
+M_{X}(t)=\frac{1}{2}+\frac{1}{3} e^{-4 t}+\frac{1}{6} e^{5 t}
+$$
+
+(a) Find the mean and variance of $X$ by differentiating the moment generating function to find moments.
+
+(b) Find the probability mass function of $X$. Use the probability mass function to check your answer for part (a).
+\newpage
+  \item[5.12]  Suppose the random variable $X$ has density function
+
+$$
+f(x)= \begin{cases}\frac{1}{2} x^{2} e^{-x}, & \text { if } x \geq 0 \\ 0, & \text { otherwise }\end{cases}
+$$
+
+Find the moment generating function $M(t)$ of $X$. Be careful about the values of $t$ for which $M(t)<\infty$.
+$$
+M_{X}(t)=\frac{1}{2}+\frac{1}{3} e^{-4 t}+\frac{1}{6} e^{5 t}
+$$
+
+(a) Find the mean and variance of $X$ by differentiating the moment generating function to find moments.
+
+(b) Find the probability mass function of $X$. Use the probability mass function to check your answer for part (a).
+
+\newpage
+  \item[9.9]  Let $X_{i}$ be the amount of money earned by a food truck on State Street on day $i$. From past experience, the owner of the cart knows that $E\left[X_{i}\right]=$ $\$ 5000$.
+
+(a) Give the best possible upper bound for the probability that the cart will earn at least $\$ 7000$ tomorrow.
+
+(b) Answer part (a) again with the extra knowledge that $\operatorname{Var}\left(X_{i}\right)=\$ 4500$.
+
+(c) Continue to assume that for all $i$ we have $E\left[X_{i}\right]=5000$ and $\operatorname{Var}\left(X_{i}\right)=4500$. Assuming that the amount earned on any given day is independent of the earning on other days, how many days does the cart have to be on State Street to ensure, with a probability at least 0.95 , that the cart's average earnings would be between $\$ 4950$ and $\$ 5050$. (Do not use the central limit theorem for this problem.)
+
+\newpage
+  \item[9.21]  Let $X_{1}, \ldots, X_{500}$ be i.i.d. random variables with expected value 2 and variance 3 . The random variables $Y_{1}, \ldots, Y_{500}$ are independent of the $X_{i}$ variables, also i.i.d., but they have expected value 2 and variance 2 . Use the CLT to estimate $P\left(\sum_{i=1}^{500} X_{i}>\sum_{i=1}^{500} Y_{i}+50\right)$.
+
+Hint. Use the CLT for the random variables $X_{1}-Y_{1}, X_{2}-Y_{2}, \ldots$
+
+\end{itemize}
+\end{document}

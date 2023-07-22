@@ -1,0 +1,116 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+%\usepackage{enumitem}
+\usepackage[inline]{enumitem}
+
+%\input{.tex/preamble}
+%\input{.tex/macros}
+%\input{.tex/letterfonts}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Homework 5}
+
+\author{Guy Matz}
+\date{\today}
+
+
+\begin{document}
+%\maketitle
+
+\begin{itemize}
+
+	\item[5.24] Let $X \sim \mathcal{N}(0,1)$ and $Y=e^{X} . Y$ is called a log-normal random variable. (a) Find the probability density function of $Y$.
+
+(b) Find the $n$th moment $E\left(Y^{n}\right)$ of $Y$.
+
+Hint. Do not compute the moment generating function of $Y$. Instead relate the $n$th moment of $Y$ to an expectation of $X$ that you know.
+
+\newpage
+	\item[5.29] Let $Z \sim \mathcal{N}(0,1)$. Find the probability density function of $|Z|$.
+
+\newpage
+	\item[5.31] Suppose that $U \sim \operatorname{Unif}[0,1]$. Let $Y=e^{\frac{U}{1-U}}$. Find the probability density function of $Y$.
+
+\newpage
+	\item[6.2] The joint probability mass function of the random variables $(X, Y)$ is given by the following table:
+
+\begin{center}
+\includegraphics[max width=\textwidth]{images/exercise-6.2.png}
+
+\end{center}
+
+(a) Find the marginal probability mass functions of $X$ and $Y$.
+
+(b) Calculate the probability $P\left(X+Y^{2} \leq 2\right)$.
+
+\newpage
+	\item[6.3] For each lecture the professor chooses between white, yellow, and purple chalk, independently of previous choices. Each day she chooses white chalk with probability 0.5 , yellow chalk with probability 0.4 , and purple chalk with probability 0.1 .
+
+(a) What is the probability that over the next 10 days she will choose white chalk 5 times, yellow chalk 4 times, and purple chalk 1 time?
+
+(b) What is the probability that over the next 10 days she will choose white chalk exactly 9 times?
+
+
+\newpage
+	\item[6.6] Suppose that $X, Y$ are jointly continuous with joint probability density function
+
+$$
+f(x, y)= \begin{cases}x e^{-x(1+y)}, & \text { if } x>0 \text { and } y>0 \\ 0, & \text { otherwise. }\end{cases}
+$$
+
+(a) Find the marginal density functions of $X$ and $Y$.
+
+(b) Calculate the expectation $E[X Y]$.
+
+(c) Calculate the expectation $E\left[\frac{X}{1+Y}\right]$.
+
+Hint. For the last two parts, recalling moments of the exponential distribution can be helpful.
+
+\newpage
+	\item[6.18] Suppose that $X$ and $Y$ are integer-valued random variables with joint probability mass function given by
+
+$$
+p_{X, Y}(a, b)= \begin{cases}\frac{1}{4 a}, & \text { for } \quad 1 \leq b \leq a \leq 4 \\ 0, & \text { otherwise. }\end{cases}
+$$
+
+(a) Show that this is indeed a joint probability mass function.
+
+(b) Find the marginal probability mass functions of $X$ and $Y$.
+
+(c) Find $P(X=Y+1)$.
+
+\newpage
+	\item[6.22] Let $\left(X_{1}, X_{2}, X_{3}, X_{4}\right) \sim \operatorname{Mult}\left(n, 4, p_{1}, p_{2}, p_{3}, p_{4}\right)$. What is the distribution of $X_{1}+X_{2}$ ?
+
+Hint. This can be done without any computation. Take a look at the argument at the end of Example 6.10 .
+
+\newpage
+	\item[6.37] Let $h$ be a continuous function on $[a, b]$ such that $h(a)=h(b)=0$ and $h(x)>0$ for $a<x<b$. Let $D$ be the region between the $x$-axis and the graph of $h$ :
+
+$$
+D=\{(x, y): a<x<b, 0<y<h(x)\}
+$$
+
+Let $(X, Y)$ be a uniformly distributed random point on $D$. Find the marginal density function $f_{X}$ of $X$.
+
+\newpage
+	\item[6.42] Let $(X, Y)$ be a uniform random point on the rectangle
+
+$$
+D=[0,2] \times[0,3]=\{(x, y): 0 \leq x \leq 2,0 \leq y \leq 3\} .
+$$
+
+Let $Z=X+Y$. Give the joint cumulative distribution function of $(X, Z)$.
+
+Hint. Recall the definition of the cumulative distribution function and draw a picture.
+
+\end{itemize}
+\end{document}
