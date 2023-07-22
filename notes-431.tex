@@ -167,21 +167,27 @@
         \item Binomial
           \begin{itemize}
             \item use-case: Many trials of Two possible outcome
-            \item 
+            \item pmf: $P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$
           \end{itemize}
         \item Geometric
-            \begin{itemize}
-              \item pmf: $P(X=k) = p \cdot (1-p)^{k-1}$
-            \end{itemize}
+          \begin{itemize}
+            \item use-case: Num of failures before a success
+            \item pmf: $P(X=k) = p \cdot (1-p)^{k-1}$
+          \end{itemize}
         \item Hypergeometric
-            \begin{itemize}
-              \item use-case: Sample drawn without replacement
-              \item pmf: $P(X=k) = \frac{\binom{N_A}{k}\binom{N-N_A}{n-k}}{\binom{N}{n}} 
-            \end{itemize}
+          \begin{itemize}
+            \item use-case: Sample drawn without replacement
+            \item pmf: $P(X=k) = \frac{\binom{N_A}{k}\binom{N-N_A}{n-k}}{\binom{N}{n}} 
+          \end{itemize}
 
       \end{itemize}
     \subsection{Continuous Distributions}%
       \begin{itemize}
+        \item Conditions For Contimuous Distribution
+          \begin{itemize}
+            \item Continuous \& Differentiable
+            \item pdf integrates to 1
+          \end{itemize}
         \item Normal
           \begin{itemize}
             \item Estimation metric:  $np(1-p) > 10$
@@ -191,6 +197,14 @@
               \item pdf: $\frac{\lambda^k}{k!} e^{-\lambda}
               \item Estimation metric: $np(1-p) < 10$
             \end{itemize}
+      \end{itemize}
+    \subsection{Independence}%
+      \begin{itemize}
+        \item Multiple events (and their complemets) are independent if
+          \[ P(A B)=P(A) P(B), P(A C)=P(A) P(C), P(B C)=P(B) P(C), P(A B C)=P(A) P(B) P(C) \]
+        \item Inclusion / Exclusion
+          \[ P(A \cup B \cup C) = P(A) +  P(B) + P(C) - P(A \cap B) - P(B \cap C) - P(A \cap C) + P(A \cap B \cap C)\]
+        \item Conditional Independence
       \end{itemize}
     
 \end{document}
