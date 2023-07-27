@@ -16,7 +16,7 @@
 %\maketitle
 
 % \setcounter{chapter}{1}
-\chapter*{20230619 - Introduction}
+\chapter{20230619 - Introduction}
 
 \begin{itemize}
   \item Reiew of set nontation and DeMorgan's rule (Appendix B, C)
@@ -66,7 +66,7 @@
     }
   \end{itemize}
 
-\chapter*{20230620 - Random Sampling}
+\chapter{20230620 - Random Sampling}
 \begin{itemize}
   \item Order - objects chosen one ata time
   \item unOrder - objects chosen in a group
@@ -84,7 +84,7 @@
 
 \end{itemize}
 
-\chapter*{20230622}%
+\chapter{20230622}%
 \section*{Random Varaibles}%
 
   \dfn{ Random Variable }{
@@ -126,16 +126,16 @@
 
 
 
-\chapter*{20230627}%
+\chapter{20230627}%
   \begin{itemize}
     \item Independence
       \begin{enumerate}
         \item get 3 different version
       \end{enumerate}
   \end{itemize}
-\chapter*{20230710}%
-  \section{LLN and CLT}%
-    \subsection{Markov's Inequality}%
+\chapter{20230710}%
+  \section*{LLN and CLT}%
+    \subsection*{Markov's Inequality}%
     \dfn{ Markov's Inequality }{
       Let $X$ be a non-negative RV.  Then ffor any $c > 0$,
       \[ P(X \geq c) \leq \frac{E[X]}{c}  \]
@@ -150,19 +150,79 @@
       mark.
     }
 
-    \subsection{Chebyshev's Inequality}%
+    \subsection*{Chebyshev's Inequality}
     \dfn{ Chebyshev's Inequality }{
       Let $X$ be a RV with a finite mean, $\mu$ and finite variance,
       $\sigma^2$.  Then ffor any $c \geq 0$ we have
       \[ P(|X - \mu| \geq c) \leq \frac{var(X)}{c^2}  \]
     }
     \myproof {
-      P(|X-\mu) \geq c) = P(|
+      $P(|X) \geq c) = P(|X - \mu| \geq c - \mu) \leq \frac{Var(X)}{c^2}$
+    }
+
+\chapter{20230718}%
+  \section*{Distribution of a Function of a RV}%
+  
+    \subsection*{Discrete}%
+    
+    \begin{align*}
+      E[Y] &= \sum^{}_{l} l \cdot P(Y=l)\\ 
+           &= \sum^{}_{l} l \sum^{}_{k: g(k)=l} P(X=k)\\ 
+           &= \sum^{}_{l} \sum^{}_{k: g(k)=l} g(k) P(X=k)\\ 
+           &= \sum^{}_{k} g(k) P(X=k)\\ 
+    \end{align*}
+    So, all possible values of Y = range of g
+
+    \subsection*{Continuous}%
+    $g$ is diff'able and $g'(x)$ exists, and $\neq 0$
+
+    \thm{To compute the pdf of Y}{
+      Derive the cdf $F_Y$ of $Y=g(x)$ and differentiate to find $f(y) = F'(y)$
+    }
+
+    See example at min 19 of 20230718
+
+    Function must be increasing (or decreasing?)!!  Then
+    \begin{align*}
+      f_Y(y) &= \frac{d F_Y(y)}{dy} \\
+             &= \frac{d F_X(g^{-1}(y))}{dy} \\
+             &= f_X(g^{-1}(y)) \cdot \frac{d g^{-1}(y)}{dy}  \\
+             &= f_X(g^{-1}(y)) \cdot \frac{1}{g'(g^{-1}(y))}
+    \end{align*}
+
+
+
+
+\chapter{20230719}%
+  \section*{Chapter 6 - Joint Distribution of RVs}%
+  \dfn{\underline{Marginal Probability Function}}{
+    The sum of all possible values for a RV, E.g. for
+    two RVs Y and Y, the P that $X=k$
+    \[ p_X(k) = P(X=k) = \sum^{}_{l \in Y} p(k,l) \]
+    And the P that $Y=l$
+    \[ P_Y(l) = P(Y=l) = \sum^{}_{k \in X} p(k,l) \]
+  }
+  \dfn{ Generalized $_nC_k$ }{
+    \[ \binom{n}{k_1,k_2\dots , k_n} = \frac{n!}{k_1!k_2! \dots k_r!} \]
+  }
+  \dfn{ Multinomial Distribution }{
+    \[ P(X_1 = k_1, \dots X_n=k_n) = \binom{n}{k_1,k_2\dots , k_n} p_1^{k_1} p_2^{k_2} \dots p_r^{k_r} \]
+      Abbreviated by:
+      \[ (X_1, X-2, \dots X_r) \sim \text{Mult}(n, r_1, p_1, p_2, \dots p_r) \]
+  }
+  \section{Joint Continuous RV}%
+    \dfn{ Joint Continuous }{
+      RVs $X_1, \dots X_n$ are Joint Continuous if there exists a 
+      Joint Distribution Function $f$ on $R^n$ such that 
+      for subsets $B \subset R^n$,
+      \[ P((X_1, \dots X_n) \in B) = \int \int_{B} f(x_1, \dots x_n) dx_1 dx_2 \dots dx_n \]
     }
     
-\chapter*{Exam Notes}%
-  \section{Exam I}%
-    \subsection{Discrete Distributions}%
+  
+  
+\chapter{Exam Notes}%
+  \section*{Exam I}%
+    \subsection*{Discrete Distributions}%
       \begin{itemize}
         \item Binomial
           \begin{itemize}
@@ -177,11 +237,11 @@
         \item Hypergeometric
           \begin{itemize}
             \item use-case: Sample drawn without replacement
-            \item pmf: $P(X=k) = \frac{\binom{N_A}{k}\binom{N-N_A}{n-k}}{\binom{N}{n}} 
+            \item pmf: $P(X=k) = \frac{\binom{N_A}{k}\binom{N-N_A}{n-k}}{\binom{N}{n}} $
           \end{itemize}
 
       \end{itemize}
-    \subsection{Continuous Distributions}%
+    \subsection*{Continuous Distributions}%
       \begin{itemize}
         \item Conditions For Contimuous Distribution
           \begin{itemize}
@@ -194,11 +254,11 @@
           \end{itemize}
         \item Poisson
             \begin{itemize}
-              \item pdf: $\frac{\lambda^k}{k!} e^{-\lambda}
+              \item pdf: $\frac{\lambda^k}{k!} e^{-\lambda}$
               \item Estimation metric: $np(1-p) < 10$
             \end{itemize}
       \end{itemize}
-    \subsection{Independence}%
+    \subsection*{Independence}%
       \begin{itemize}
         \item Multiple events (and their complemets) are independent if
           \[ P(A B)=P(A) P(B), P(A C)=P(A) P(C), P(B C)=P(B) P(C), P(A B C)=P(A) P(B) P(C) \]

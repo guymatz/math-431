@@ -23,22 +23,57 @@ Homework 5}
 
 
 \begin{document}
-%\maketitle
+\maketitle
 
 \begin{itemize}
 
-	\item[5.24] Let $X \sim \mathcal{N}(0,1)$ and $Y=e^{X} . Y$ is called a log-normal random variable. (a) Find the probability density function of $Y$.
+	\item[5.24] Let $X \sim \mathcal{N}(0,1)$ and $Y=e^{X} . Y$ is called a log-normal random variable.
 
-(b) Find the $n$th moment $E\left(Y^{n}\right)$ of $Y$.
+	\begin{enumerate}
+		\item  Find the probability density function of $Y$.
+
+			For $y \leq 0$ we have $P(Y \leq t) = 0$.  For $y \geq 0$,
+			\begin{align*}
+				F_Y(y) &= P(Y \leq y)\\
+					&= P(X \leq \ln(y))\\
+					&= \Phi(\ln(y))
+			\end{align*}
+		\item  Find the $n$th moment $E\left(Y^{n}\right)$ of $Y$.
 
 Hint. Do not compute the moment generating function of $Y$. Instead relate the $n$th moment of $Y$ to an expectation of $X$ that you know.
 
+	\[ M_Y(t) = e^{te^X} \]
+	So the nth moment is
+		\[ M^n_Y(t) = \left(t e^X \right)^n e^{te^X} \]
+	\end{enumerate}
 \newpage
 	\item[5.29] Let $Z \sim \mathcal{N}(0,1)$. Find the probability density function of $|Z|$.
+
+		For $y < 0, P(Y \leq y) =0$.  For $y \geq 0$
+		\begin{align*}
+			F_Y(y) &= P(Y \leq y) \\
+					&= P(|Z| \leq y)\\
+					&= \Phi(y) - \Phi(-y)\\
+					&= \Phi(y) - (1 - \Phi(y))\\
+					&= 2\Phi(y) - 1 \\
+		\end{align*}
+		So
+		\begin{align*}
+			f_Y(y) &= F_Y'(y) \\
+					&= 2 \Phi'(y) \\
+					&= 2 \phi(y) \cdot \frac{1}{2y}  \\
+					&= \frac{\phi(y)}{y} 
+		\end{align*}
 
 \newpage
 	\item[5.31] Suppose that $U \sim \operatorname{Unif}[0,1]$. Let $Y=e^{\frac{U}{1-U}}$. Find the probability density function of $Y$.
 
+		$Y$ is increasing on $[0,1]$ and the function
+		$g(y) = \frac{U}{e^{1-U}}$ is one-to-one, so we can use Fact
+		5.24 which states:
+		\[ f_Y(y) = f_X(g^{-1}(y) \cdot \frac{1}{|g'(g^{-1}(y))|}  \]
+
+		The only problem is that I can't figure out how to get $g^{-1}$!
 \newpage
 	\item[6.2] The joint probability mass function of the random variables $(X, Y)$ is given by the following table:
 
@@ -47,59 +82,154 @@ Hint. Do not compute the moment generating function of $Y$. Instead relate the $
 
 \end{center}
 
-(a) Find the marginal probability mass functions of $X$ and $Y$.
-
-(b) Calculate the probability $P\left(X+Y^{2} \leq 2\right)$.
+	\begin{enumerate}
+		\item  Find the marginal probability mass functions of $X$ and $Y$.
+			\begin{align*}
+				P(X=1)=\frac{10}{30} \\
+				P(X=2)=\frac{15}{30} \\
+				P(X=3)=\frac{5}{30} \\
+			\end{align*}
+			\begin{align*}
+				P(Y=0)=\frac{6}{30} \\
+				P(Y=1)=\frac{6}{30} \\
+				P(Y=2)=\frac{10}{30} \\
+				P(Y=3)=\frac{8}{30} \\
+			\end{align*}
+		\item  Calculate the probability $P\left(X+Y^{2} \leq 2\right)$.
+			\[ P(1,0) + P(2,0) + P(1,1) = \frac{2}{30} + \frac{3}{30} +  \frac{2}{30} = \frac{7}{30}  \]
+	\end{enumerate}
 
 \newpage
 	\item[6.3] For each lecture the professor chooses between white, yellow, and purple chalk, independently of previous choices. Each day she chooses white chalk with probability 0.5 , yellow chalk with probability 0.4 , and purple chalk with probability 0.1 .
 
-(a) What is the probability that over the next 10 days she will choose white chalk 5 times, yellow chalk 4 times, and purple chalk 1 time?
+	\begin{enumerate}
+		\item  What is the probability that over the next 10 days she will choose white chalk 5 times, yellow chalk 4 times, and purple chalk 1 time?
+		\[ X \sim \operatorname{Mult}(10,3,.5,.4,.1)  \]
+		\begin{align*}
+			P(X_W=5, X_Y=4, X_P = 1) &= \binom{10}{5,4,1} \cdot \left(.5\right)^5 \cdot \left(.4\right)^4 \cdot \left(.1\right)^1 \\
+			&= \frac{10!}{5!4!1!} \cdot \left(.5\right)^5 \cdot \left(.4\right)^4 \cdot \left(.1\right)^1 \\
+			&= 10 \cdot 3 \cdot 7 \cdot 6 \cdot \left(.5\right)^5 \cdot \left(.4\right)^4 \cdot \left(.1\right)^1 \\
+			&= 0.1
+		\end{align*}
 
-(b) What is the probability that over the next 10 days she will choose white chalk exactly 9 times?
+		\item  What is the probability that over the next 10 days she will choose white chalk exactly 9 times?
+			\begin{align*}
+				P(X_W = 9) &= \binom{10}{9,1,0} \cdot \left( .5 \right)^9 \cdot \left( .4 \right)^1 \cdot \left(.1\right)^0 \\
+				             &+ \binom{10}{9,0,1} \cdot \left(.5\right)^9 \cdot \left(.4\right)^0 \cdot \left(.1\right)^1 \\
+							 &= 0.0097
+			\end{align*}
+	\end{enumerate}
 
 
 \newpage
 	\item[6.6] Suppose that $X, Y$ are jointly continuous with joint probability density function
 
-$$
+
+\[
 f(x, y)= \begin{cases}x e^{-x(1+y)}, & \text { if } x>0 \text { and } y>0 \\ 0, & \text { otherwise. }\end{cases}
-$$
+\]
+		\emph{Hint. For the last two parts, recalling moments of the exponential distribution can be helpful.}
 
-(a) Find the marginal density functions of $X$ and $Y$.
+	\begin{enumerate}
+		\item  Find the marginal density functions of $X$ and $Y$.
+			\begin{align*}
+				f_X(x) &= \int_{{0}}^{{\infty}} {xe^{-x(1+y)}} d{y} \\
+					&= -e^{-x(1+y)}|_0^{\infty} \\
+					&= -(0 - e^{-x} )\\
+					&= e^{-x}
+			\end{align*}
+			\begin{align*}
+				f_Y(y) &= \int_{{0}}^{{\infty}} {xe^{-x(1+y)}} d{x} \\
+					   &= -\frac{xe^{-x(1+y)}}{1+y} + \frac{e^{-x(1+y)}}{(1+y)^2} |_0^{\infty} \\
+					&= -(0 - 0 - (0 + \frac{1}{(1+y)^2}  \\
+					&= -\left(0 - 0 - \left(0 + \frac{1}{(1+y)^2}\right) \right) \\
+					&= \frac{1}{(1+y)^2}  \\
+			\end{align*}
 
-(b) Calculate the expectation $E[X Y]$.
+		\item  Calculate the expectation $E[X Y]$.
+			\begin{align*}
+				E[XY] &= \int_{0}^{\infty} \left( \int_{0}^{\infty} x^2ye^{-x(1+y)} d{y} \right) d{x} \\
+					  &= \frac{-ye^{-x(1+y)}}{x} - \frac{e^{-x(1+y)}}{x^2} |_0^{\infty} \\
+					  &= 1
+			\end{align*}
 
-(c) Calculate the expectation $E\left[\frac{X}{1+Y}\right]$.
+		\item  Calculate the expectation $E\left[\frac{X}{1+Y}\right]$.
+			\begin{align*}
+				E\left[\frac{X}{1+Y}\right] &= \int_{0}^{\infty} \left( \int_{0}^{\infty} \frac{x^2ye^{-x(1+y)}}{1+y} d{x} \right) d{y} \\
+				&= \int_0^{\infty} \left(
+				\frac{-x^2e^{-x(1+y)}}{1+y}
+			+ \frac{2xe^{-x(1+y)}}{(1+y)^2}
+			+ \frac{2e^{-x(1+y)}}{(1+y)^3}
+			|_0^{\infty}
+		\right) dy\\
+			&= \int_0^{\infty}
+			\left( 
+			\frac{2}{(1+y)^3}
+			\right) dy\\
+			&= 
+			- \frac{1}{ (1+y)^2}
+			|_0^{\infty} \\
+			&= 1
+			\end{align*}
 
-Hint. For the last two parts, recalling moments of the exponential distribution can be helpful.
+			
+	\end{enumerate}
 
 \newpage
 	\item[6.18] Suppose that $X$ and $Y$ are integer-valued random variables with joint probability mass function given by
 
-$$
+\[
 p_{X, Y}(a, b)= \begin{cases}\frac{1}{4 a}, & \text { for } \quad 1 \leq b \leq a \leq 4 \\ 0, & \text { otherwise. }\end{cases}
-$$
+\]
+	\begin{enumerate}
+		\item  Show that this is indeed a joint probability mass function.
 
-(a) Show that this is indeed a joint probability mass function.
+			\begin{align*}
+				p_X(x) &= \sum^{}_{y}p_{X,Y}(x,y)  \\
+					&= p(1,1) + p(1,2) \dots p(3,4) + p(4,4)\\
+					&= \frac{1}{4} + 2 \frac{1}{8} + 3\frac{1}{12} + 4 \frac{1}{16} \\
+					&= 1
+			\end{align*}
+			\begin{align*}
+				p_Y(y) &= \sum^{}_{x}p_{X,Y}(x,y)  \\
+					&= p(1,1) + p(1,2) \dots p(3,4) + p(4,4)\\
+					&= \frac{1}{4} + 2 \frac{1}{8} + 3\frac{1}{12} + 4 \frac{1}{16} \\
+					&= 1
+			\end{align*}
+		\item  Find the marginal probability mass functions of $X$ and $Y$.
+			\begin{align*}
+				P(X=1) &= \frac{1}{4} 
+				P(X=2) &= \frac{1}{4} 
+				P(X=3) &= \frac{1}{4} 
+				P(X=4) &= \frac{1}{4} 
+			\end{align*}
+			\begin{align*}
+				P(Y=1) &= \frac{1}{2} 
+				P(Y=2) &= \frac{1}{4} 
+				P(Y=3) &= \frac{1}{8} 
+				P(Y=4) &= \frac{1}{16} 
+			\end{align*}
 
-(b) Find the marginal probability mass functions of $X$ and $Y$.
-
-(c) Find $P(X=Y+1)$.
+		\item  Find $P(X=Y+1)$.
+				\begin{align*}
+					P(X=Y+1) &= \frac{1}{8} +\frac{1}{12} +\frac{1}{16}\\
+							&= \frac{13}{48} 
+				\end{align*}
+	\end{enumerate}
 
 \newpage
 	\item[6.22] Let $\left(X_{1}, X_{2}, X_{3}, X_{4}\right) \sim \operatorname{Mult}\left(n, 4, p_{1}, p_{2}, p_{3}, p_{4}\right)$. What is the distribution of $X_{1}+X_{2}$ ?
 
 Hint. This can be done without any computation. Take a look at the argument at the end of Example 6.10 .
 
+\[ (X_1 + X_2) \sim  \operatorname{Mult}\left(2n, 4, p_{1}, p_{2}, p_{3}, p_{4}\right) \]
+
 \newpage
 	\item[6.37] Let $h$ be a continuous function on $[a, b]$ such that $h(a)=h(b)=0$ and $h(x)>0$ for $a<x<b$. Let $D$ be the region between the $x$-axis and the graph of $h$ :
-
-$$
-D=\{(x, y): a<x<b, 0<y<h(x)\}
-$$
-
+	\[ D=\{(x, y): a<x<b, 0<y<h(x)\} \]
 Let $(X, Y)$ be a uniformly distributed random point on $D$. Find the marginal density function $f_{X}$ of $X$.
+
+I don't see how to do this without knowing $h(0)$ \dots
 
 \newpage
 	\item[6.42] Let $(X, Y)$ be a uniform random point on the rectangle
@@ -110,7 +240,17 @@ $$
 
 Let $Z=X+Y$. Give the joint cumulative distribution function of $(X, Z)$.
 
-Hint. Recall the definition of the cumulative distribution function and draw a picture.
+\emph{Hint. Recall the definition of the cumulative distribution function and draw a picture.}
+\[
+P(X \leq x, X + Y \leq z) =
+\begin{cases}
+0, & \text { if } z < 0 \\
+\frac{1}{6} \cdot \frac{z^2}{2}, & \text { for } 0 \leq z \leq x \\
+\frac{1}{6} \cdot \left( \frac{z^2}{2} -3z \frac{x^3}{2}  + 3x^2 \right) , & \text { for } x \leq z \leq 3 \\
+\frac{1}{6} \cdot \left( 3z - z^2 - 9 \right) & \text { for } 3 \leq z \leq 3 + x \\
+1, & \text { if } z > 5
+\end{cases}
+\]
 
 \end{itemize}
 \end{document}
