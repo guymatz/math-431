@@ -1,0 +1,116 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+%\usepackage{enumitem}
+\usepackage[inline]{enumitem}
+
+%\input{.tex/preamble}
+%\input{.tex/macros}
+%\input{.tex/letterfonts}
+
+\title{UW - Math 431 \\
+Probability Theory \\
+Homework 5}
+
+\author{Guy Matz}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+ .  \item[6.28] Let $X$ and $Y$ be independent $\operatorname{Geom}(p)$ random variables. Let $V=\min (X, Y)$ and
+
+\[
+W= \begin{cases}0, & \text { if } X<Y \\ 1, & \text { if } X=Y \\ 2, & \text { if } X>Y\end{cases}
+\]
+
+Find the joint probability mass function of $V$ and $W$ and show that $V$ and $W$ are independent.
+
+Hint. Use the joint probability mass function of $X$ and $Y$ to compute the joint probability mass function of $V$ and $W$.
+
+
+\newpage
+ . \item[6.36] Suppose that $X, Y$ are jointly continuous with joint probability density function
+
+$$
+f(x, y)=c e^{-\frac{x^{2}}{2}-\frac{(x-y)^{2}}{2}}, \quad x, y \in(-\infty, \infty)
+$$
+
+for some constant $c$.
+
+    \begin{enumerate}
+ .    .\item poopy
+ .     \item Find the value of the constant $c$.
+
+ .     \item Find the marginal density functions of $X$ and $Y$.
+
+ .     \item Determine whether $X$ and $Y$ are independent.
+    \end{enumerate}
+
+\newpage
+ . \item[7.5] Let $X, Y$ and $Z$ be independent normal random variables with distributions $X \sim \mathcal{N}(1,2), Y \sim \mathcal{N}(2,1)$, and $Z \sim \mathcal{N}(0,7)$. Let $W=X-4 Y+Z$.
+ .   \begin{enumerate}
+ .    .\item poopy
+ .     \item Identify the distribution of $W$.
+
+ .     \item Find the probability $P(W>-2)$.
+ .   \end{enumerate}
+
+\newpage
+ . \item[7.7] Let $X_{1}, X_{2}, X_{3}$, and $X_{4}$ be independent standard normal random variables. What is the probability that $X_{3}$ is the second largest?
+
+\newpage
+ . \item[7.16] Let $X$ be a Poisson random variable with parameter $\lambda$ and $Y$ an independent Bernoulli random variable with parameter $p$. Find the probability mass function of $X+Y$.
+
+
+\newpage
+ . \item[8.9] Suppose $X$ and $Y$ are independent random variables with $E[X]=$ 3, $E[Y]=5, \operatorname{Var}(X)=2$ and $\operatorname{Var}(Y)=3$. Compute the following quantities.
+
+    \begin{enumerate}
+ .    .   \item poopy
+ .     \item $E[3 X-2 Y+7]$
+
+ .     \item $\operatorname{Var}(3 X-2 Y+7)$
+
+ .     \item $\operatorname{Var}(X Y)$
+    \end{enumerate}
+
+\newpage
+ . \item[8.12]
+
+     \begin{enumerate}
+ .    .    \item poopy
+ .     \item Let $Z$ be Gamma(2, $\lambda)$ distributed. That is, $Z$ has the density function
+
+$$
+f_{Z}(z)= \begin{cases}\lambda^{2} z e^{-\lambda z}, & z \geq 0 \\ 0, & \text { otherwise }\end{cases}
+$$
+
+Use the definition of the moment generating function to calculate $M_{Z}(t)=E\left(e^{t Z}\right)$
+
+ .     \item Let $X$ and $Y$ be two independent $\operatorname{Exp}(\lambda)$ random variables. Recall the moment generating function of $X$ and $Y$ from Example 5.6 in Section 5.1. Using the approach from Section 8.3 show that $Z$ and $X+Y$ have the same distribution.
+     \end{enumerate}
+
+
+\newpage
+ . \item[8.48] Suppose there are 100 cards numbered 1 through 100. Draw a card at random. Let $X$ be the number of digits on the card (between 1 and 3) and let $Y$ be the number of zeros. Find $\operatorname{Cov}(X, Y)$.
+
+\newpage
+ . \item[8.54] Suppose that for the random variables $X, Y$ we have $E[X]=$ $2, E[Y]=1, E\left[X^{2}\right]=5, E\left[Y^{2}\right]=10$ and $E[X Y]=1$
+
+     \begin{enumerate}
+ .    .\item poopy
+ .     \item Compute $\operatorname{Corr}(X, Y)$.
+
+ .     \item Find a number $c$ so that $X$ and $X+c Y$ are uncorrelated.
+     \end{enumerate}
+\end{itemize}
+\end{document}
